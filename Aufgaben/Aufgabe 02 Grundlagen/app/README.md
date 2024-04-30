@@ -1,47 +1,22 @@
-# Svelte + Vite
+# Aufgabe 02 Grundlagen
 
-This template should help get you started developing with Svelte in Vite.
+In dieser Aufgabe wollen die Überschrift und ein Bild für unsere Pizzaria Webseite erstellen.
 
-## Recommended IDE Setup
+## Aufgaben
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+### 0. Vorbereitung
 
-## Need an official Svelte framework?
+Führt den Befehl "npm install" in dem Ordener "app" aus, um alle dependecies zu installieren.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+### 1. Überschrift
 
-## Technical considerations
+Erstellt innerhalb der script-tags eine Variable für den Namen unserer Pizzaria (z.B. Mario's Pizza Service) und weise einer Überschrift im main-teil dessen Wert zu. Anschließend führe auf der Überschrift innerhalb der Überschrift-tags eine Methode aus, die die Überschrift visuell verändert 
+(z.B. toUpperCase())
 
-**Why use this over SvelteKit?**
+### 2. Bild
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+Erstelle unterhalb der Überschrift ein Bild, dessen Attribute ebenfalls über Variablen gesetzt werden sollen. Verwende dazu die bereits definierte quelle (src) in der Aufgabe. 
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+### 3. Programm ausführen
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Führe das Programm mit "npm run dev" aus und überprüfe ob die Überschrift so angezeigt wird wie erwartet und darunter ein passendes Bild zu sehen ist. 
