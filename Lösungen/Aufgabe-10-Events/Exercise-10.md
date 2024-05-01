@@ -1,9 +1,5 @@
 # Exercise 10 - Event Handling in Svelte
 
-## Overview
-
-This exercise enhances your understanding of event handling in Svelte applications. You'll work on the "Create Your Own Super Mario Pizza!" ordering system, focusing on dispatching and handling custom events, using event modifiers, and implementing event forwarding.
-
 ## Objectives
 
 - Implement and dispatch custom component events using `createEventDispatcher`.
@@ -29,27 +25,24 @@ Setup `App.svelte` to handle the 'addTopping' event from `PizzaList.svelte`. Upd
 
 - Implement the event handler in `App.svelte` to receive the topping data and update the cart, ensuring no duplicates.
 
-### Task 3: Implement an Event Modifier
-
-Adjust the button in `PizzaList.svelte` to use an inline event handler with the `once` modifier, ensuring that a topping can only be added once.
-
 **Instructions:**
 
 - Apply the `once` modifier to the button responsible for adding toppings.
 
-### Task 4: Implement an Inline Handler for Deleting Toppings in App.svelte
+### Task 3: Implement an Inline Handler for Deleting Toppings in App.svelte
 
 **Instructions:**
 
 - Use the `on:removeTopping` component event and its `event.detail.id` to filter the topping out from the `cart`.
 
-### Task 5: Implement Event Forwarding in OrderButton
+### Task 4: Implement Event Forwarding in OrderButton
 
-Ensure that the `OrderButton` component forwards the click event properly to `App.svelte` for order completion.
+Ensure that the `OrderButton` component forwards the click event properly to `App.svelte` for order completion and can only be clicked `once`.
 
 **Instructions:**
 
 - Link the `OrderButton` click event to a function in `App.svelte` that completes the order.
+- Apply the `once` modifier to the OrderButton in `App.svelte`.
 
 ## Code Templates
 
@@ -95,8 +88,11 @@ Ensure that the `OrderButton` component forwards the click event properly to `Ap
   let cart = [];
 
   function handleAddPizza(event) {
-    // Task 2: Handle the addTopping event here
-    // <-- Your code here -->
+    const { topping } = event.detail;
+    // dont allow duplicate toppings
+    if (!cart.find((cartItem) => cartItem.id === topping.id)) {
+      // Task 2: Handle the addTopping event here
+    }
   }
 
   function handleOrder() {

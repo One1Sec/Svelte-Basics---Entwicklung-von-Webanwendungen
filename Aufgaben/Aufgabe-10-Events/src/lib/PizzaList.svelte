@@ -17,7 +17,7 @@
 <ul>
   {#each toppings as topping (topping.id)}
     <li>
-      <button on:click={() => addToPizza(topping)}> <!-- Task 3: Add the 'once' modifier here to prevent multiple of the same toppings -->
+      <button on:click={() => addToPizza(topping)}>
         Add {topping.emoji} {topping.name}
       </button>
     </li>

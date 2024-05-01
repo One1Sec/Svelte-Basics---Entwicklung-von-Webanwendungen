@@ -1,19 +1,30 @@
 <script>
+  import { onMount } from "svelte";
   import PizzaList from "./lib/PizzaList.svelte";
   import OrderSummary from "./lib/OrderSummary.svelte";
   import OrderButton from "./lib/OrderButton.svelte";
   import order_confirm from "./assets/mario-lets-go.mp3";
 
   let cart = [];
+  let audio;
+
+  //onMount is a lifecycle function that runs when the component is mounted, more on this later.
+  onMount(() => {
+    audio = new Audio(order_confirm);
+    audio.preload = "auto";
+  });
 
   function handleAddPizza(event) {
+    const { topping } = event.detail;
+    // prevent duplicate toppings
+    if (cart[topping.id]) return;
+
     // Task 2: Handle the addTopping event here
   }
 
   function handleOrder() {
     if (cart.length === 0) return;
 
-    const audio = new Audio(order_confirm);
     audio.play();
     const toppings = cart.map((item) => item.name).join(", ");
     alert(`Your Pizza with ${toppings} will be baked🍕🎉`);
@@ -28,9 +39,9 @@
 <main>
   <h1>Create Your Own Super Mario Pizza!</h1>
   <PizzaList on:addTopping={handleAddPizza} />
-  <!-- Task 4: Refactor the handleRemoveTopping function into an inline handler -->
+  <!-- Task 3: Refactor the handleRemoveTopping function into an inline handler -->
   <OrderSummary on:removeTopping={handleRemoveTopping} {cart} />
-  <!-- Task 5: Link the OrderButton click event to the handleOrder function-->
+  <!-- Task 4: Link the OrderButton click event to the handleOrder function and add the once modifier-->
   <OrderButton />
 </main>
 

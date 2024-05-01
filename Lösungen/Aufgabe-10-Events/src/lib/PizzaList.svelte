@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
   let toppings = [
@@ -10,20 +10,20 @@
   ];
 
   function addToPizza(topping) {
-    dispatch('addTopping', { topping });
+    dispatch("addTopping", { topping });
   }
 </script>
 
 <ul>
   {#each toppings as topping (topping.id)}
     <li>
-      <button on:click|once={() => addToPizza(topping)}>
-        Add {topping.emoji} {topping.name}
+      <button on:click={() => addToPizza(topping)}>
+        {topping.emoji}<br />
+        Add {topping.name}
       </button>
     </li>
   {/each}
 </ul>
-
 
 <style>
   ul {
