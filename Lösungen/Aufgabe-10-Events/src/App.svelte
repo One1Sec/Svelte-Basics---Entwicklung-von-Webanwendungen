@@ -42,7 +42,6 @@
   />
 
   <OrderButton on:click|once={handleOrder} />
-  <!--ensure to play audio once-->
 </main>
 
 <style>
