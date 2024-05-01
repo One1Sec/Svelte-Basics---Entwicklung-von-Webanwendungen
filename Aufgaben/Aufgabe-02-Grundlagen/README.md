@@ -10,7 +10,7 @@ Führt den Befehl "npm install" in dem Ordener "app" aus, um alle dependecies zu
 
 ### 1. Überschrift
 
-Erstellt innerhalb der script-tags eine Variable für den Namen unserer Pizzaria (z.B. Mario's Pizza Service) und weise einer Überschrift im main-teil dessen Wert zu. Anschließend führe auf der Überschrift innerhalb der Überschrift-tags eine Methode aus, die die Überschrift visuell verändert 
+Erstellt innerhalb der script-tags eine Variable für den Namen unserer Pizzaria (z.B. Mario & Luigi's Pizza) und weise einer Überschrift im main-teil dessen Wert zu. Anschließend führe auf der Überschrift innerhalb der Überschrift-tags eine Methode aus, die die Überschrift visuell verändert 
 (z.B. toUpperCase())
 
 ### 2. Bild

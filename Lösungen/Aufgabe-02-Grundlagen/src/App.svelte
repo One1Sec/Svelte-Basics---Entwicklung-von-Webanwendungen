@@ -1,7 +1,7 @@
 <script>
-  let name = "Mario's Pizza Service"
+  let name = "Mario & Luigi's Pizza"
   let src = "images/image.png"
-  let alt = "Mario und Luigi mit einer Pizza"
+  let alt = "Mario and Luigi with a Pizza"
  </script>
  
  
