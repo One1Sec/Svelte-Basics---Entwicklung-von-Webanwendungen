@@ -26,9 +26,9 @@
 <main>
   <h1>Mario & Luigi's Pizza Ordering System</h1>
   <ul>
-    <!-- Using the `id` as a key helps Svelte track each item's DOM node efficiently.
-         This is especially important in larger lists or when items are frequently updated,
-         added, or removed, as it can significantly improve performance and prevent UI bugs. -->
+    <!-- Die Verwendung der `id` als Key hilft Svelte, jeden DOM-Knoten des Elements effizient zu verfolgen.
+         Dies ist besonders wichtig bei größeren Listen oder wenn Elemente häufig aktualisiert,
+         hinzugefügt oder entfernt werden, da es die Performance erheblich verbessern und UI-Fehler verhindern kann. -->
     {#each pizzas as pizza (pizza.id)}
       <li>
         <button on:click={() => addToCart(pizza.id)}>
@@ -48,8 +48,8 @@
   <div class="cart">
     <h2>Your Cart:</h2>
     <ul>
-      <!-- Here too, using `id` as a key optimizes updates only to items that change,
-           preserving the state of other items in the list and minimizing DOM updates. -->
+      <!-- Auch hier optimiert die Verwendung der `id` als Key die Aktualisierungen nur für Elemente, die sich ändern,
+           bewahrt den Zustand anderer Elemente in der Liste und minimiert dadurch DOM-Aktualisierungen. -->
       {#each cartItems as pizza (pizza.id)}
         <li>{pizza.quantity} x {pizza.emoji} {pizza.name}</li>
       {/each}

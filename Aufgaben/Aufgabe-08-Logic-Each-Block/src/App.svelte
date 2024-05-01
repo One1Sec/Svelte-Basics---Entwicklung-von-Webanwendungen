@@ -1,68 +1,69 @@
 <script>
-  // Fetched pizzas from an API or database
+  // Pizzen von einer API oder Datenbank abgerufen
   let pizzas = [
-    { id: 1, name: "Goomba's Special", emoji: "🍄", quantity: 0 },
-    { id: 2, name: "Yoshi's Veggie", emoji: "🦕", quantity: 0 },
-    { id: 3, name: "Bowser's Blaze", emoji: "🐢", quantity: 0 },
-    { id: 4, name: "Peach's Royal", emoji: "👑", quantity: 0 },
+    { id: 1, name: "Goombas Spezial", emoji: "🍄", quantity: 0 },
+    { id: 2, name: "Yoshis Veggie", emoji: "🦕", quantity: 0 },
+    { id: 3, name: "Bowsers Feuer", emoji: "🐢", quantity: 0 },
+    { id: 4, name: "Peachs Royal", emoji: "👑", quantity: 0 },
   ];
 
-  // Function to add a pizza to the cart
+  // Funktion, um eine Pizza zum Warenkorb hinzuzufügen
   function addToCart(pizzaId) {
     const pizza = pizzas.find((p) => p.id === pizzaId);
     pizza.quantity += 1;
     pizzas = pizzas;
   }
 
-  // Function to remove a pizza from the cart
+  // Funktion, um eine Pizza aus dem Warenkorb zu entfernen
   function removeFromCart(pizzaId) {
     const pizza = pizzas.find((p) => p.id === pizzaId);
     pizza.quantity -= 1;
     pizzas = pizzas;
   }
 
-  // Declaration to filter selected pizzas
+  // Declaration, um nur ausgewählte Pizzen anzuzeigen
   $: cartItems = pizzas.filter((p) => p.quantity > 0);
 </script>
 
 <main>
-  <h1>Mario & Luigi's Pizza Ordering System</h1>
+  <h1>Mario & Luigis Pizzabestellsystem</h1>
   <ul>
-    <!-- Task: Refactor this list to use the {#each} block for dynamic rendering -->
-    <!-- Remove static code from line 33 to 60-->
+    <!-- Aufgabe 1: Überarbeite diese Liste mithilfe von `{#each}` mit keys -->
+    <!-- Entferne statischen Code von Zeile 33 bis 60 -->
     <li>
       <button on:click={() => addToCart(1)}>
-        Add {pizzas[0].emoji}
+        Hinzufügen {pizzas[0].emoji}
         {pizzas[0].name}
       </button>
       <button
         on:click={() => removeFromCart(1)}
-        aria-label="Remove"
+        aria-label="Entfernen"
         disabled={pizzas[0].quantity === 0}
       >
-        Remove {pizzas[0].emoji}
+        Entfernen {pizzas[0].emoji}
       </button>
-      <span>Quantity: {pizzas[0].quantity}</span>
+      <span>Menge: {pizzas[0].quantity}</span>
     </li>
     <li>
       <button on:click={() => addToCart(2)}>
-        Add {pizzas[1].emoji}
+        Hinzufügen {pizzas[1].emoji}
         {pizzas[1].name}
       </button>
       <button
         on:click={() => removeFromCart(2)}
-        aria-label="Remove"
+        aria-label="Entfernen"
         disabled={pizzas[1].quantity === 0}
       >
-        Remove {pizzas[1].emoji}
+        Entfernen {pizzas[1].emoji}
       </button>
-      <span>Quantity: {pizzas[1].quantity}</span>
+      <span>Menge: {pizzas[1].quantity}</span>
     </li>
   </ul>
   <div class="cart">
-    <h2>Your Cart:</h2>
-    <!-- Task: Refactor this list to use the {#each} block with cartItems for dynamic rendering -->
+    <h2>Dein Warenkorb:</h2>
+    <!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern -->
     <ul></ul>
+    <!--Aufgabe 3: Füge in jedem `{#each}` block ein key hinzu, um sicherzustellen, dass Svelte jedes DOM-Element effizient verfolgen kann-->
   </div>
 </main>
 
