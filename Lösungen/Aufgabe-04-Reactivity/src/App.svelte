@@ -1,13 +1,11 @@
 <script>
+  // Standardmäßig 0 Pizzen
   let pizzaCount = 0;
 
-  // Reactive declaration for calculating total price
+  // Declaration zur Berechnung des Gesamtpreises
   $: totalPrice = pizzaCount * 10;
 
-  // Logging the order changes reactively
-  $: console.log(`Total pizzas ordered: ${pizzaCount}`);
-
-  // Resetting pizza count reactively if it exceeds 6
+  // Zurücksetzen vom pizzaCount, wenn sie 6 überschreitet
   $: if (pizzaCount > 6) {
     alert("Too many pizzas! Resetting your order.");
     pizzaCount = 0;
