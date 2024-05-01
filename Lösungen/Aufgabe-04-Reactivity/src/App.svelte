@@ -2,7 +2,7 @@
   let pizzaCount = 0;
 
   // Reactive declaration for calculating total price
-  $: totalPrice = pizzaCount * 10; 
+  $: totalPrice = pizzaCount * 10;
 
   // Logging the order changes reactively
   $: console.log(`Total pizzas ordered: ${pizzaCount}`);
