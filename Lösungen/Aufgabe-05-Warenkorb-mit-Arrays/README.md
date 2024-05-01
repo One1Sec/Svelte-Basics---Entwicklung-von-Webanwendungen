@@ -1,47 +1,52 @@
-# Svelte + Vite
+# Aufgabe 5 - Warenkorb mit Arrays
 
-This template should help get you started developing with Svelte in Vite.
+## Überblick
 
-## Recommended IDE Setup
+Diese Übung kombiniert vorangegangene Übungen mit Arrays. Ihr implementiert die Grundlagen für den Warenkorb der Pizzaria und überarbeitet das Design der Seite. Es sollen zwei verschiedene Pizzen im Angebot sein, die über einen Klick in den Warenkorb aufgenommen werden. Neben dem Inhalt, soll auch der Gesamtpreis angegeben werden. Zuletzt soll für den Warenkorb auch noch ein Limit gesetzt werden.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Am Ende soll die Seite in etwa so aussehen ("solution_screenshot.png" unter dem "public/images" folder dieser Aufgabe): 
+![Alt text](public/images/solution_screenshot.png?raw=true "Solution screenshot")
 
-## Need an official Svelte framework?
+## Aufgaben
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+1. **Pizza - Objekte und Array**: Erstelle zwei Pizzaobjekte (standard javascript) für die gegebenen Variablen. Die Objekte sollen eine id, den Namen der Pizza sowie einen Preis enthalten. Implementiere anschließend die Funktion addPizzaToCart, die dem Einkaufswagen-array eine Pizza hinzufügen soll.
 
-## Technical considerations
+2. **Pizza zum Warenkorb hinzufügen**: Erstelle für beide Pizzas je einen Button, der beim betätigen dem Array die entsprechende Pizza hinzufügen soll.
 
-**Why use this over SvelteKit?**
+3. **Gesamtpreis der Bestellung**: Verwende die Variable totalPrice und nutze reactive declaration, um den Gesamtpreis dynamisch zu generieren basierend auf dem Inhalt des Warenkorbes. Verwende ein passendes html tag, um das Ergebnis anzuzeigen
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+4. **Bestellungsinhalt anzeigen**: Verwende die Variable pizzaList und nutze reactive declaration, um den Inhalt der Bestellung dynamisch zu generieren. Es soll wie im Screenshot gezeigt die Anzahl und Art der bestellten Pizzen nacher auf der Webseite angezeigt werden. Verwende für die Anzeige nur die eine String-Variable und achte darauf, dass nicht bestellte Pizzas (Pizza-Count = 0) auch nicht aufgelistet werden sollen, und falls beide Arten von Pizzas bestellt wurden, diese untereinander angezeigt werden.
+Für diese und die nächste Aaufgabe bietet es sich an die beiden Variable pizzaJoshiCount und pizzaGoombaCount reaktiv zu deklarieren. (Es geht auch einfacher für diese Aufgabe aber zu Übungszwecken gerne basierend auf dem Warenkorb die variablen dynamisch ändern) 
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+5. **Warnung und Warenkorb-Limit**: Ändere den Warenkorb so ab, dass nur noch maximal 10 Pizzas ausgewählt werden können. Wird das Limit erreicht soll immer wenn versucht wird eine neue Pizza dem Warenkorb hinzuzufügen, ein Pop-up erscheinen, das dem User das Limit verdeutlicht.
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## Hinweise zu den Aufgaben bei Bedarf weiter unten
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+1. **Pizza - Objekte und Array**: Objekte werden in javascript folgendermaßen erstellt: 
+objectName = {attribute: value, attribute2 : value2}
 
-**Why include `.vscode/extensions.json`?**
+2. **Pizza zum Warenkorb hinzufügen**: Verwende das on:clik attribut , dass die zugehörige Methode aufruft. Dadurch, dass die Methode einen Parameter benötigt, müssen Arrowfunctions innerhalb einer {} benutzt werden
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+3. **Gesamtpreis der Bestellung**: Verwende die standard methode array.reduce((acc,arrayelement)=>...,startwert) . acc für den Akkumulator, der den kumulierten Wert während der Reduzierung des Arrays darstellt. Er wird anfangs mit "startwert" initialisiert und kann bei jedem Durchlauf der Reduzierung angepasst werden.  
 
-**Why enable `checkJs` in the JS template?**
+4. **Bestellungsinhalt anzeigen**: Verwende die Variablen pizzaJoshiCount und pizzaGoombaCount. Für das Zählen kann wie bei 3. die array.reduce Methode verwendet werden. Nicht vergessen wenn: "=> { dein Code}" muss in "dein Code" auch ein return sein. 
+Um die Pizza liste dynamisch in nur einem String zu generieren, kann der Conditional-operator (?) verwendet werden. 
+    --> Bedingung? wertWennTrue : wertWennFalse 
+Um die Pizzatypen untereinander anzuzeigen, wenn beide in der Bestellung enthalten sind, kann der html tag <br> (<!--br-->) im String verwendet werden.
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```

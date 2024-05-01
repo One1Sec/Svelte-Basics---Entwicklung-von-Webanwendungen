@@ -4,7 +4,7 @@
 
 Diese Übung kombiniert vorangegangene Übungen mit Arrays. Ihr implementiert die Grundlagen für den Warenkorb der Pizzaria und überarbeitet das Design der Seite. Es sollen zwei verschiedene Pizzen im Angebot sein, die über einen Klick in den Warenkorb aufgenommen werden. Neben dem Inhalt, soll auch der Gesamtpreis angegeben werden. Zuletzt soll für den Warenkorb auch noch ein Limit gesetzt werden.
 
-Am Ende soll die Seite in etwa so aussehen: 
+Am Ende soll die Seite in etwa so aussehen ("solution_screenshot.png" unter dem "public/images" folder dieser Aufgabe): 
 ![Alt text](public/images/solution_screenshot.png?raw=true "Solution screenshot")
 
 ## Aufgaben
