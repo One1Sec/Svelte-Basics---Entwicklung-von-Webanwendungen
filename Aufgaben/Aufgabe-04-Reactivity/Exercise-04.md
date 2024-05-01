@@ -1,4 +1,4 @@
-# Exercise 4 - Reactivity in Svelte
+# Exercise 04 - Reactivity in Svelte
 
 ## Overview
 

@@ -83,7 +83,6 @@
     margin-bottom: 10px;
   }
   button {
-    margin-right: 10px;
     cursor: pointer;
   }
   .cart {
