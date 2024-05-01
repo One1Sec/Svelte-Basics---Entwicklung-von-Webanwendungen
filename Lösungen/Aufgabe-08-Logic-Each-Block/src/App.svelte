@@ -30,7 +30,7 @@
          Dies ist besonders wichtig bei größeren Listen oder wenn Elemente häufig aktualisiert,
          hinzugefügt oder entfernt werden, da es die Performance erheblich verbessern und UI-Fehler verhindern kann. -->
     {#each pizzas as pizza (pizza.id)}
-      <li>
+      <li class="container">
         <button on:click={() => addToCart(pizza.id)}>
           Add {pizza.emoji}
           {pizza.name}
@@ -49,7 +49,7 @@
     <h2>Your Cart:</h2>
     <ul>
       <!-- Auch hier optimiert die Verwendung der `id` als Key die Aktualisierungen nur für Elemente, die sich ändern,
-           bewahrt den Zustand anderer Elemente in der Liste und minimiert dadurch DOM-Aktualisierungen. -->
+           bewahrt den Zustand anderer Elemente in der Liste und minimiert DOM-Aktualisierungen. -->
       {#each cartItems as pizza (pizza.id)}
         <li>{pizza.quantity} x {pizza.emoji} {pizza.name}</li>
       {/each}
@@ -59,14 +59,25 @@
 
 <style>
   main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: "Comic Sans MS", cursive;
     text-align: center;
     background-color: #e3caa5;
     padding: 50px;
   }
+
+  .container {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+  }
   ul {
     display: flex;
     flex-direction: column;
+    align-items: center;
     list-style: none;
     padding: 0;
   }
@@ -74,12 +85,15 @@
     margin-bottom: 10px;
   }
   button {
-    margin-right: 10px;
     cursor: pointer;
+    border-radius: 0;
+    min-width: 100px;
   }
   .cart {
     margin-top: 20px;
     background-color: #f6f6f6;
     padding: 10px;
+    border-radius: 15px;
+    width: 300px;
   }
 </style>

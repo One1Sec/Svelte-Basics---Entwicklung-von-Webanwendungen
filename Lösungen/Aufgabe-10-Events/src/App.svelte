@@ -8,7 +8,6 @@
   let cart = [];
   let audio;
 
-  //onMount is a lifecycle function that runs when the component is mounted, more on this later.
   onMount(() => {
     audio = new Audio(order_confirm);
     audio.preload = "auto";
@@ -16,7 +15,8 @@
 
   function handleAddPizza(event) {
     const { topping } = event.detail;
-    if (cart[topping.id]) return;
+    
+    if (cart.some(item => item.id === topping.id)) return;
 
     cart = [...cart, topping];
   }

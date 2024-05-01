@@ -18,8 +18,8 @@
   {#each toppings as topping (topping.id)}
     <li>
       <button on:click={() => addToPizza(topping)}>
-        Add {topping.emoji}
-        {topping.name}
+        {topping.emoji}<br />
+        Add {topping.name}
       </button>
     </li>
   {/each}

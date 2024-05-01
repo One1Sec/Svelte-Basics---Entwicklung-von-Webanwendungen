@@ -26,13 +26,13 @@
 </script>
 
 <main>
-  <h1>Mario & Luigis Pizzabestellsystem</h1>
+  <h1>Mario & Luigi's Pizza Ordering System</h1>
   <ul>
     <!-- Aufgabe 1: Überarbeite diese Liste mithilfe von `{#each}` mit keys -->
     <!-- Entferne statischen Code von Zeile 33 bis 60 -->
-    <li>
+    <li class="container">
       <button on:click={() => addToCart(1)}>
-        Hinzufügen {pizzas[0].emoji}
+        Add {pizzas[0].emoji}
         {pizzas[0].name}
       </button>
       <button
@@ -40,13 +40,13 @@
         aria-label="Entfernen"
         disabled={pizzas[0].quantity === 0}
       >
-        Entfernen {pizzas[0].emoji}
+        Remove {pizzas[0].emoji}
       </button>
-      <span>Menge: {pizzas[0].quantity}</span>
+      <span>Quantity: {pizzas[0].quantity}</span>
     </li>
-    <li>
+    <li class="container">
       <button on:click={() => addToCart(2)}>
-        Hinzufügen {pizzas[1].emoji}
+        Add {pizzas[1].emoji}
         {pizzas[1].name}
       </button>
       <button
@@ -54,13 +54,13 @@
         aria-label="Entfernen"
         disabled={pizzas[1].quantity === 0}
       >
-        Entfernen {pizzas[1].emoji}
+      Remove {pizzas[1].emoji}
       </button>
-      <span>Menge: {pizzas[1].quantity}</span>
+      <span>Quantity: {pizzas[1].quantity}</span>
     </li>
   </ul>
   <div class="cart">
-    <h2>Dein Warenkorb:</h2>
+    <h2>Your cart:</h2>
     <!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern -->
     <ul></ul>
     <!--Aufgabe 3: Füge in jedem `{#each}` block ein key hinzu, um sicherzustellen, dass Svelte jedes DOM-Element effizient verfolgen kann-->
@@ -69,14 +69,25 @@
 
 <style>
   main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: "Comic Sans MS", cursive;
     text-align: center;
     background-color: #e3caa5;
     padding: 50px;
   }
+
+  .container {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+  }
   ul {
     display: flex;
     flex-direction: column;
+    align-items: center;
     list-style: none;
     padding: 0;
   }
@@ -85,10 +96,14 @@
   }
   button {
     cursor: pointer;
+    border-radius: 0;
+    min-width: 100px;
   }
   .cart {
     margin-top: 20px;
     background-color: #f6f6f6;
     padding: 10px;
+    border-radius: 15px;
+    width: 300px;
   }
 </style>
