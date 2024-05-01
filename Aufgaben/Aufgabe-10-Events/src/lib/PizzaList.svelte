@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
   let toppings = [
@@ -10,7 +10,7 @@
   ];
 
   function addToPizza(topping) {
-    // Task 1: Dispatch an event "addTopping" with the topping as parameter
+    // Aufgabe 1: Dispatche ein Event mit den Topping als Parameter
   }
 </script>
 
@@ -18,13 +18,12 @@
   {#each toppings as topping (topping.id)}
     <li>
       <button on:click={() => addToPizza(topping)}>
-        Add {topping.emoji} {topping.name}
+        {topping.emoji}<br />
+        Add {topping.name}
       </button>
     </li>
   {/each}
 </ul>
-
-
 
 <style>
   ul {

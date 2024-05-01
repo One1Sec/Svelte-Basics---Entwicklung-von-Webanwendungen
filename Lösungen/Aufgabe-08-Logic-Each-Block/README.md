@@ -1,8 +1,8 @@
-# Übung 08 - Logik-Each-Block
+# Aufgabe 08 - Logik-Each-Block
 
 ## Überblick
 
-Diese Übung soll dir helfen, den `{#each}`-Block von Svelte zu üben, um Listen dynamisch zu rendern statt sie zu hardcoden. Du wirst eine statische Darstellung einer Pizzaliste in eine dynamische Liste basierend auf einem Array von Pizzen umwandeln.
+Diese Aufgabe soll dir helfen, den `{#each}`-Block von Svelte zu üben, um Listen dynamisch zu rendern statt sie zu hardcoden. Du wirst eine statische Darstellung einer Pizzaliste in eine dynamische Liste basierend auf einem Array von Pizzen umwandeln.
 
 ## Ziele
 

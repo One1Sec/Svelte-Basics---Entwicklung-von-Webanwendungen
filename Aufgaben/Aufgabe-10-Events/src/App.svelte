@@ -8,7 +8,7 @@
   let cart = [];
   let audio;
 
-  //onMount is a lifecycle function that runs when the component is mounted, more on this later.
+  // onMount ist eine Lifecycle-Funktion, die ausgeführt wird, wenn die Komponente gemountet wird. Mehr dazu später.
   onMount(() => {
     audio = new Audio(order_confirm);
     audio.preload = "auto";
@@ -16,10 +16,10 @@
 
   function handleAddPizza(event) {
     const { topping } = event.detail;
-    // prevent duplicate toppings
-    if (cart[topping.id]) return;
+    // verhindere doppelte Toppings
+    if (cart.some((item) => item.id === topping.id)) return;
 
-    // Task 2: Handle the addTopping event here
+    // Aufgabe 2: Handle das addTopping Event hier
   }
 
   function handleOrder() {
@@ -27,7 +27,7 @@
 
     audio.play();
     const toppings = cart.map((item) => item.name).join(", ");
-    alert(`Your Pizza with ${toppings} will be baked🍕🎉`);
+    alert(`Deine Pizza mit ${toppings} wird gebacken🍕🎉`);
     cart = [];
   }
 
@@ -39,9 +39,9 @@
 <main>
   <h1>Create Your Own Super Mario Pizza!</h1>
   <PizzaList on:addTopping={handleAddPizza} />
-  <!-- Task 3: Refactor the handleRemoveTopping function into an inline handler -->
+  <!-- Aufgabe 3: Refaktorisiere die handleRemoveTopping Funktion zu einem Inline-Handler -->
   <OrderSummary on:removeTopping={handleRemoveTopping} {cart} />
-  <!-- Task 4: Link the OrderButton click event to the handleOrder function and add the once modifier-->
+  <!-- Aufgabe 4: Verbinde das Klick-Event des OrderButton mit der handleOrder Funktion und füge den 'once' Modifier hinzu -->
   <OrderButton />
 </main>
 
