@@ -1,4 +1,4 @@
-# Mario & Luigi's Pizza Ordering System Refactoring Exercise
+# Exercise 08 - Logic Each Block
 
 ## Overview
 

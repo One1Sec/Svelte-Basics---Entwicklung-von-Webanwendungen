@@ -1,16 +1,16 @@
 <script>
-  // Task 1: Declare a reactive variable for pizza count (default should be 0)
+  // Aufgabe 1: Gebe der Variable einen Standartwert (default should be 0)
   let pizzaCount; // <-- Your code here
 
-  // Task 2: Calculate the total price reactively (assume each pizza costs 10€)
+  // Aufgabe 2: Berechne den Gesamtpreis der Pizzen
   $: totalPrice = undefined; // <-- Your code here
 
   function orderPizza() {
-    // Task 3: Increment the pizza count here
+    // Aufgabe 3: Erhöhe die Anzahl der Pizzen um 1
     // <-- Your code here
   }
 
-  // Task 4: Add reactivity to handle excessive pizza orders (e.g. limit of 6)
+  // Aufgabe 4: Zurücksetzen vom pizzaCount, wenn sie 6 überschreitet
   $: if (undefined) {
     // Reset logic here
     // <-- Your code here
