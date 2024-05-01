@@ -17,7 +17,7 @@ Folge den Kommentaren im bereitgestellten Code-Snippet, um die fehlenden Teile z
 
 ```svelte
 <script>
-  // Aufgabe 1: Deklarieren einer reaktiven Variable für die Pizzazählung 
+  // Aufgabe 1: 
   let pizzaCount; // <-- Weise hier einen Wert zu, um die Anzahl der bestellten Pizzen zu verfolgen (Standardmäßig 0)
 
   // Aufgabe 2: Den Gesamtpreis reaktiv berechnen (gehe davon aus, dass jede Pizza 10€ kostet)
