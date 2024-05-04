@@ -59,7 +59,7 @@ export const count = createCount();
 
 3. **Store bindings**: In dieser Aufgabe wird eine Nachricht und die Möglichkeit Feedback zu geben aus store_bindings.js importiert. Damit dies funktioniert, muss folgender Code ergänzt werden:
 
-    1. bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in <input> stehen.
+    1. bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
     2. Funktion für Button: Der Button soll es ermöglichen, automtisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal 'I am satisfied' hinzugefügt werden. Im Code in App.svelte muss hierfür die fehlende Funktion und on:click ergänzt werden.
 
 ## Code aus App.svelte
