@@ -28,7 +28,7 @@ Folge den Kommentaren im bereitgestellten Code-Snippet, um die fehlenden Teile z
     // <-- Dein Code hier
   }
 
-  // Aufgabe 4: Reaktivität hinzufügen, um übermäßige Pizzabestellungen zu behandeln (Limit von 6)
+  // Aufgabe 4: Declaration hinzufügen, um übermäßige Pizzabestellungen zu handeln (Limit von 6)
   $: // <-- Dein Code hier
 
 </script>
