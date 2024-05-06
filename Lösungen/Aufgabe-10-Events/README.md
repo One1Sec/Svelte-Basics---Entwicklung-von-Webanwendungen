@@ -104,13 +104,17 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
     alert(`Deine Pizza mit ${toppings} wird gebacken🍕🎉`);
     cart = [];
   }
+
+    function handleRemoveTopping(event) {
+    cart = cart.filter((item) => item.id !== event.detail.id);
+  }
 </script>
 
 <main>
   <h1>Create Your Own Super Mario Pizza!</h1>
   <PizzaList on:addTopping={handleAddPizza} />
   <OrderSummary {cart} on:removeTopping={(event) => {
-    // Aufgabe 3: Implementiere den Inline Handler zum Löschen von Bestellungen
+    // Aufgabe 3: Implementiere `handleRemoveTopping` als Inline Handler zum Löschen von Bestellungen
   }} />
   <OrderButton /> <!--Aufgabe 4: Leite das Klick-Event an handleOrder weiter. Verwende 'once' um Doppelbestellungen zu verhindern.-->
 </main>
