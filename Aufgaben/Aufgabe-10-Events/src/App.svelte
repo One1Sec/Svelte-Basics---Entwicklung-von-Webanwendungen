@@ -16,7 +16,7 @@
 
   function handleAddPizza(event) {
     const { topping } = event.detail;
-    // verhindere doppelte Toppings
+    // verhindert doppelte Toppings
     if (cart.some((item) => item.id === topping.id)) return;
 
     // Aufgabe 2: Handle das addTopping Event hier
