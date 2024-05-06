@@ -20,23 +20,81 @@ Für diese und die nächste Aaufgabe bietet es sich an die beiden Variable pizza
 
 5. **Warnung und Warenkorb-Limit**: Ändere den Warenkorb so ab, dass nur noch maximal 10 Pizzas ausgewählt werden können. Wird das Limit erreicht soll immer wenn versucht wird eine neue Pizza dem Warenkorb hinzuzufügen, ein Pop-up erscheinen, das dem User das Limit verdeutlicht.
 
-## Hinweise zu den Aufgaben bei Bedarf weiter unten
+### Hinweise zu den Aufgaben bei Bedarf unterhalb der Code Vorlagen
 
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
+## Code Vorlagen
+
+```svelte
+
+<script>
+
+  //Variablen und Konstanten hier
+  const pizzaGoomba = "TODO"
+  const pizzaJoshi = "TODO"
+
+  //Variablen die die Musterlösung verwendet (sind hier allerdings noch nicht reactive)
+  let pizzaCart = [] //Einkaufswagen
+  let totalPrice = 0.00 //Gesamtpreis
+  let pizzaJoshiCount = 0 //Anzahl Joshi-Pizzas in der Bestellung
+  let pizzaGoombaCount = 0 //Anzahl Goomba-Pizzas in der Bestellung
+  let pizzaList = "" //String der die Art und Anzahl der Pizzas in der Bestellung enthält
+
+  const src = "images/image.png"
+  const alt = "Mario and Luigi with a Pizza"
+
+  //function to add a pizza to the array
+  function addPizzaToCart(pizza){
+    "TODO"
+  }
+  
+  //Deine Reactive Deklarationen und Statements hier
+
+</script>
+
+<main>
+  <div id="header">
+    <h1>Mario & Luigi's Pizza</h1>
+    <p>TODO Text von aufgabe 3 rein</p>
+    <img id="logo" {src} {alt}/>
+  </div>
+  <div id="cart">
+    <!-- Dein Code hier -->
+  </div>
+</main>
+
+<style>
+  #logo {
+    /*Dein Code hier */
+  }
+
+  #cart {
+    /*Dein Code hier */
+  }
+
+  main {
+    font-family: "Comic Sans MS", cursive;
+    text-align: center;
+    background-color: #e3caa5;
+    padding: 50px;
+  }
+
+  button {
+    background-color: #fc4100;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #c40c0c;
+  }
+</style>
+
+```
+
+## Hinweise zu den Aufgaben
 
 1. **Pizza - Objekte und Array**: Objekte werden in javascript folgendermaßen erstellt: 
 objectName = {attribute: value, attribute2 : value2}
