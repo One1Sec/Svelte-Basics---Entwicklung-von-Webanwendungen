@@ -1,6 +1,6 @@
 ## SVELTE
 
-# SET Up
+# SET UP
 
 Um Svelte zu benutzen benötigt ihr die folgenden Anwendungen:
 

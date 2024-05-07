@@ -6,7 +6,7 @@ In der folgenden Aufgabe werdet ihr HTML direkt in einer Svelte-Komponente rende
 
 ## Aufgaben 
 
-1. **Zuweisung HTML_Tag** : In App.svelte ist bereits ein entsprechender Text (description) hinterlegt. In diesem befindet sich das HTML-Element 'strong' innerhalb des Strings. 
+1. **Zuweisung HTML-Tag** : In App.svelte ist bereits ein entsprechender Text (description) hinterlegt. In diesem befindet sich das HTML-Element 'strong' innerhalb des Strings. 
 Passe das p-Element ensprechend an, damit die Beschreibung korrekt angezeigt wird. 
 
 2. **Style** : Ändere das Styling des p-Elements in dieser Aufgabe wie folgt:
