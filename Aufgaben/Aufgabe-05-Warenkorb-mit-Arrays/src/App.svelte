@@ -1,6 +1,8 @@
 <script>
 
-  //Variablen und Konstanten hier
+  let description= "Mario & Luigi's pizza service only uses <strong>fresh and local</strong> products 🍕🥦";
+
+  //Konstanten hier
   const pizzaGoomba = "TODO"
   const pizzaJoshi = "TODO"
 
@@ -26,7 +28,7 @@
 <main>
   <div id="header">
     <h1>Mario & Luigi's Pizza</h1>
-    <p>TODO Text von aufgabe 3 rein</p>
+    <p>{@html description}</p>
     <img id="logo" {src} {alt}/>
   </div>
   <div id="cart">

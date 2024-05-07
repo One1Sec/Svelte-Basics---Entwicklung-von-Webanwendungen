@@ -6,6 +6,7 @@
   let pizzaCart = []
   let totalPrice = 0.00
   let orderLimitReached = false
+  let description= "Mario & Luigi's pizza service only uses <strong>fresh and local</strong> products 🍕🥦";
 
   const src = "images/image.png"
   const alt = "Mario and Luigi with a Pizza"
@@ -47,7 +48,7 @@
 <main>
   <div id="header">
     <h1>Mario & Luigi's Pizza</h1>
-    <p>TODO Text von aufgabe 3 rein</p>
+    <p>{@html description}</p>
     <img id="logo" {src} {alt}/>
   </div>
   <div id="cart">
