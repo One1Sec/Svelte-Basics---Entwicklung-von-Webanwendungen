@@ -39,9 +39,9 @@
 <main>
   <h1>Create Your Own Super Mario Pizza!</h1>
   <PizzaList on:addTopping={handleAddPizza} />
-  <!-- Aufgabe 3: Refaktorisiere die handleRemoveTopping Funktion zu einem Inline-Handler -->
-  <OrderSummary on:removeTopping={handleRemoveTopping} {cart} />
-  <!-- Aufgabe 4: Verbinde das Klick-Event des OrderButton mit der handleOrder Funktion und füge den 'once' Modifier hinzu -->
+  <!--Aufgabe 3 hier in Zeile 43 -->
+  <OrderSummary {cart} />
+  <!-- Aufgabe 4: Verbinde das click event des OrderButton mit der passenden Funktion und füge den 'once' Modifier hinzu -->
   <OrderButton />
 </main>
 

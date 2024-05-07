@@ -1,4 +1,5 @@
-<button on:click> Complete Order </button>
+<!--Aufgabe 4: Leite das DOM event 'click' weiter -->
+<button> Complete Order </button>
 
 
 

@@ -54,15 +54,16 @@
         aria-label="Entfernen"
         disabled={pizzas[1].quantity === 0}
       >
-      Remove {pizzas[1].emoji}
+        Remove {pizzas[1].emoji}
       </button>
       <span>Quantity: {pizzas[1].quantity}</span>
     </li>
   </ul>
   <div class="cart">
     <h2>Your cart:</h2>
-    <!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern -->
-    <ul></ul>
+    <ul>
+      <!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern (z.B.: <li> {pizza.quantity} x {pizza.emoji} {pizza.name}) -->
+    </ul>
     <!--Aufgabe 3: Füge in jedem `{#each}` block ein key hinzu, um sicherzustellen, dass Svelte jedes DOM-Element effizient verfolgen kann-->
   </div>
 </main>

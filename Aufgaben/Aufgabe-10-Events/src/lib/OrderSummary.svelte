@@ -1,12 +1,9 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
   export let cart;
 
-  const dispatch = createEventDispatcher(); 
+  // Aufgabe 3: Initialisiere den Dispatcher.
 
-  function removeTopping(id) {
-    dispatch('removeTopping', { id }); 
-  }
+  // Aufgabe 3: Implementiere die Funktion zum Dispatchen des Custom Events 'removeTopping' mit der ID als Parameter.
 </script>
 
 <h2>Your Order:</h2>
@@ -14,8 +11,10 @@
   <ul>
     {#each cart as item (item.id)}
       <li>
-        {item.emoji} {item.name}
-        <button on:click={() => removeTopping(item.id)}>x</button>
+        {item.emoji}
+        {item.name}
+        <!-- Aufgabe 3: Rufe die Funktion `removeTopping` auf und übergebe die ID des items beim Klicken. -->
+        <button on:click={() => null}>x</button>
       </li>
     {/each}
   </ul>
@@ -41,7 +40,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
   }
   button {
     background: none;

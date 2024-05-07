@@ -8,7 +8,7 @@ Diese Übung verbessert dein Verständnis für das Event Handling in Svelte-Anwe
 
 - Implementiere und dispatche custom component events mit `createEventDispatcher`.
 - Verwende event modifiers, um Benutzerinteraktionen zu steuern.
-- Wende event forwarding an, um events effektiv über verschiedene Komponenten zu verwalten.
+- Wende DOM event forwarding an, um DOM events über verschiedene Komponenten zu verwalten.
 
 ## Aufgaben
 
@@ -29,20 +29,24 @@ Richte `App.svelte` ein, um das `addTopping` Event von `PizzaList.svelte` zu han
 
 - Implementiere den event handler in `App.svelte`, um die Topping-Daten zu empfangen und das cart zu aktualisieren, wobei Duplikate vermieden werden.
 
-### Aufgabe 3: Implementiere einen Inline Handler zum Löschen von Toppings in App.svelte
+### Aufgabe 3: Erstellen und Dispatchen eines custom Events in OrderSummary.svelte zum Löschen von Toppings in App.svelte
+
+Repliziere Aufgabe 1 und 2 für ein customEvent `removeTopping` in der `OrderSummary.svelte`
 
 **Anweisungen:**
 
-- Verwende das `on:removeTopping` component event und dessen `event.detail.id`, um das Topping aus dem `cart` zu filtern.
+- Füge `createEventDispatcher` in `OrderSummary.svelte` ein.
+- Füge eine Funktion hinzu, die ein `removeTopping` Event dispatcht. Dieses Event soll die ID des zu entfernenden Toppings als Detail enthalten.
+- Binde in `App.svelte` die `handleRemoveTopping` Funktion an das custom Event an.
 
 ### Aufgabe 4: Implementiere Event Forwarding in OrderButton
 
 Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App.svelte` für die Bestellabschluss weiterleitet und nur `once` geklickt werden kann.
 
 **Anweisungen:**
-
+- Leite das click event weiter in `OrderButton.svelte`
 - Verbinde das `OrderButton` click event mit einer Funktion in `App.svelte`, die die Bestellung abschließt.
-- Wende den `once` modifier auf den OrderButton in `App.svelte` an
+- Wende den `once` modifier auf den OrderButton in `App.svelte` an, damit der Bestellprozess nicht mehrfach getätigt werden kann.
 
 ## Code Vorlagen
 
@@ -113,10 +117,8 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
 <main>
   <h1>Create Your Own Super Mario Pizza!</h1>
   <PizzaList on:addTopping={handleAddPizza} />
-  <OrderSummary {cart} on:removeTopping={(event) => {
-    // Aufgabe 3: Implementiere `handleRemoveTopping` als Inline Handler zum Löschen von Bestellungen
-  }} />
-  <OrderButton /> <!--Aufgabe 4: Leite das Klick-Event an handleOrder weiter. Verwende 'once' um Doppelbestellungen zu verhindern.-->
+  <OrderSummary {cart} /><!--Aufgabe 3 hier-->
+  <OrderButton /> <!-- Aufgabe 4: Verbinde das click event des OrderButton mit der passenden Funktion und füge den 'once' Modifier hinzu -->
 </main>
 ```
 
@@ -124,14 +126,11 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
 
 ```svelte
 <script>
-  import { createEventDispatcher } from 'svelte';
   export let cart;
 
-  const dispatch = createEventDispatcher();
+  // Aufgabe 3: Initialisiere den Dispatcher.
 
-  function removeTopping(id) {
-    dispatch('removeTopping', { id });
-  }
+  // Aufgabe 3: Implementiere die Funktion zum Dispatchen des Custom Events 'removeTopping' mit der ID als Parameter.
 </script>
 
 <h2>Deine Bestellung:</h2>
@@ -140,7 +139,7 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
     {#each cart as item (item.id)}
       <li>
         {item.emoji} {item.name}
-        <button on:click={() => removeTopping(item.id)}>x</button>
+        <button on:click={() => null}>x</button> <!-- Aufgabe 3: Rufe die Funktion `removeTopping` auf und übergebe die ID des items beim Klicken. -->
       </li>
     {/each}
   </ul>
@@ -150,5 +149,6 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
 **OrderButton.svelte**
 
 ```svelte
-<button on:click> Complete Order </button>
+<!--Aufgabe 4: Leite das DOM event 'click' weiter -->
+<button> Complete Order </button>
 ```
