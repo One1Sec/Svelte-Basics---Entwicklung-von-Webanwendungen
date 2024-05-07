@@ -2,26 +2,23 @@
   // Aufgabe 1: Gebe der Variable einen Standartwert (standardmäßig 0)
   let pizzaCount; // <-- Your code here
 
-  // Aufgabe 2: Berechne den Gesamtpreis der Pizzen (1 Pizza = 10€)
-  $: totalPrice = undefined; // <-- Your code here
+  // Aufgabe 2: Nutze eine declaration um den Gesamtpreis zu berechnen(1 Pizza = 10€)
+  // <-- Your code here
 
   function orderPizza() {
     // Aufgabe 3: Erhöhe die Anzahl der Pizzen um 1
     // <-- Your code here
   }
 
-  // Aufgabe 4: Zurücksetzen vom pizzaCount, wenn sie 6 überschreitet
-  $: if (undefined) {
-    // Reset logic here
-    // <-- Your code here
-  }
+  // Aufgabe 4: Declaration hinzufügen, um übermäßige Pizzabestellungen zu handeln (Limit von 6) und die Anzahl zurücksetzen
+  // <-- Your code here
 </script>
 
 <main>
   <h1>Mario & Luigi's Pizza</h1>
   <button on:click={orderPizza}>Order Mario's Special</button>
   <p>Total Pizzas Ordered: {pizzaCount}</p>
-  <p>Total Price: {totalPrice} €</p>
+  <p>Total Price: €</p>
 </main>
 
 <style>

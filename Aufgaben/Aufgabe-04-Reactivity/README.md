@@ -20,16 +20,16 @@ Folge den Kommentaren im bereitgestellten Code-Snippet, um die fehlenden Teile z
   // Aufgabe 1:
   let pizzaCount; // <-- Weise hier einen Wert zu, um die Anzahl der bestellten Pizzen zu verfolgen (Standardmäßig 0)
 
-  // Aufgabe 2: Den Gesamtpreis reaktiv berechnen (gehe davon aus, dass jede Pizza 10€ kostet)
-  $: totalPrice; // <-- Dein Code hier
+  // Aufgabe 2: Den Gesamtpreis mit einer declaration reaktiv berechnen (gehe davon aus, dass jede Pizza 10€ kostet)
+  // <-- Dein Code hier
 
   function orderPizza() {
     // Aufgabe 3: Erhöhe hier die Pizzazählung
     // <-- Dein Code hier
   }
 
-  // Aufgabe 4: Declaration hinzufügen, um übermäßige Pizzabestellungen zu handeln (Limit von 6)
-  $: // <-- Dein Code hier
+  // Aufgabe 4: Declaration hinzufügen, um übermäßige Pizzabestellungen zu handeln (Limit von 6) und die Anzahl zurücksetzen
+  // <-- Dein Code hier
 
 </script>
 
