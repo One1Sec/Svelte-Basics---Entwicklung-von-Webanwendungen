@@ -2,28 +2,16 @@
 
 ## Überblick 
 
-1. **Declaring props:** Um Daten auch außerhalb einer Komonente zu nutzen, kann in svelet vor der Deklarierung das Stichwort 'export' ergänzt werden. Mithilfe von 'export' kann dann auch außerhalb einer Komponente auf Props zugegriffen werden. Dafür wird bei der Deklarierung im script durch let/ const zusätzlich export geschrieben. 
-Um die Props in anderen Komponenten nutzen zu können, muss in diesem zusätzlich die Funktion 'import' genutzt werden. Diese wird in svelte genutzt, um Module, Komponenten oder andere JavaScript-Assets in eine Svelte-Datei zu importieren. 
-
-2. **Default values:** Props können zusätzlich mit einem default value versehen werden. Dieser kann bei der Deklaration vergeben werden. Wird eine exportierte Komponente ohne eine Antwortstütze hinzufügen, wird automatisch der default value zurückgegeben.
-
-3. **Spread props:** Spread Props in Svelte ermöglichen es, die Eigenschaften eines Objekts auf ein Svelte-Element oder eine Komponente zu verteilen (ähnlich wie in JavaScript mit dem Spread-Operator). Dadurch kann man Props übergeben, ohne sie explizit aufzulisten, was z.B. beim Erstellen wiederverwendbarer Komponenten nützlich ist.
+In dieser Übung ergänzt ihr den Code, sodass alle Props richtig dargestellt und mit einem default value versehen werden. Zuletzt wird die spread-Methode angewand.
 
 ## Aufgaben 
-1. **Declaring props:** Ergänze in Nested.svelte das fehlende 'export' vor der Deklaration von 'pizzaGoomba'.
+1. **Declaring props:** In Nested.svelte wurde pizzaGooma nicht korrekt exportiert. Ergänze den Code entsprechend damit die Variable in der root component verwendet werden kann.
 
-2. **Default values:** Ergänze in Nested.svelte den default value für 'pizzaGoomba' und in App.svelte eine weiteres <Nested/>-Element ohne Antwortstütze, sodass aitomatisch der default value ausgegeben wird.
+2. **Default values:** Ergänze in Nested.svelte den default value für 'pizzaGoomba' und rufe die Komponente erneut auf, jedoch ohne wie im Beispiel einen Input zu geben.
 
-3. **Spread props:** In der Aufgabe liegt das file Pizzainfo.svelte ab. In diesem liegt ein p-Element ab und es werden weitere props exportiert.
-In App.svelte wurde vergessen, den Wert für 'toppings' zu referenzieren. Da die props den erwarteten Werten entsprechen, kann alternativ die folgende Methode genutzt werden:
-
-```svelte
-<Pizzainfo {...pizza} /> 
-```
-
-Hierdurch werden die erwarteten Props auf die komplette Komponente "gespreaded"
-
-Aufgabe: Ersetze den vorhanden Pizzainfo-Aufruf durch die oben beschriebene Möglichkeit. 
+3. **Spread props:** Pizzainfo.svelte enthält ein p-Element und es werden weitere propsdeklariert und exportiert.
+In App.svelte wurde vergessen, den Wert für 'toppings' zu referenzieren. Da die props aus Pizzainfo.svelte den erwarteten Werten entsprechen, können alternativ spread props genutzt werden.
+Ersetze den vorhanden Pizzainfo-Aufruf, damit die Nachricht im Browser korrekt angezeigt wird. 
 
 ```svelte
 <script>

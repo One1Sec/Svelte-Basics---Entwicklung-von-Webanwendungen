@@ -2,14 +2,7 @@
 
 ## Überblick 
 
-In svelte können verschiedene Logiken mithilfe von if, else und if else abgebildet werden. Eine neue if-Bedingung hat die folgende Schreibweise:
-
-```svelte
-{#if Bedingung1 = true} Ereignis A
-{:else if Bedingung2 = true} Ereignis B
-{:else} Ereignis C
-{/if}
-```
+In der folgenden Aufgabe sollen je nach Pizzen im Warenkorb bestimmte Nachrichten an den Kunden abgebildet werden. Diese sollen mithilfe von If, Else If und Else implementiert werden.
 
 ## Aufgabe:
 

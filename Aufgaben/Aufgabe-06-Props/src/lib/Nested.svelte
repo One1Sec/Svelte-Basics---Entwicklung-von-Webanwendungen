@@ -1,8 +1,8 @@
 <script>
 
-    // Ergänze das fehlende "export" vor let pizzaGoomba
+    // Ergänze den Code, damit pizzaGooma korrekt exportiert wird
     // Ergänze den fehlenden default value für pizzaGoomba
-    let pizzaGoomba = "Tomato sauce and Mozzarella";
+    let pizzaGoomba;
  
  </script>
  

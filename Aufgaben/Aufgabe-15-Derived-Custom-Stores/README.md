@@ -2,11 +2,7 @@
 
 ## Überblick 
 
-**1 Dervied Stores:** In Svelte ist ein derived store ein Store, der von einem oder mehreren anderen Stores abgeleitet wird. Er wird automatisch aktualisiert, wenn sich die abhängigen Stores ändern. Der Wert dieses Stores wird durch eine Funktion bestimmt, die die aktuellen Werte der abhängigen Stores als Parameter erhält. 
-
-**2 Custom stores:** Custom Stores sind reaktive Speicher, die eine strukturierte Möglichkeit bieten, eigene Funktionen zur Interaktion und Verwaltung von Daten in Svelte zu erstellen, während sie die reaktive Natur von Svelte beibehalten.
-
-**3 Store bindings:** Store-Bindings sorgen dafür, dass eine Komponente automatisch aktualisiert wird, wenn sich ein zugeordneter Store ändert, und dass Änderungen in der Komponente den Store ebenfalls aktualisieren können. Wenn ein Speicher eine set-Mehode hat, kann an seinen Wert angebunden werden. 
+In der folgenden Aufgabe werden mithilfe von Stores eine Anzeige der verstrichenen Zeit seit der Öffnung der Website und zwei Buttons mit einem zugehörigen Store implementiert. Im letzten Schritt wird ein Eingabefeld eingebunden. 
 
 ## Aufgaben
 

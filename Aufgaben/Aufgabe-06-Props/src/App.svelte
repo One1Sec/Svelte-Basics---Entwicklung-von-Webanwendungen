@@ -1,7 +1,7 @@
 
 <script>
-	import Nested from './Nested.svelte';
-	import Pizzainfo from './Pizzainfo.svelte';
+	import Nested from './lib/Nested.svelte';
+	import Pizzainfo from './lib/Pizzainfo.svelte';
 
 	const pizza = {
 		name: "Yoshi's Veggi",
@@ -16,6 +16,9 @@
 	<h1>Mario & Luigi's Pizza</h1>
 	<Nested pizzaGoomba = {"Mozzarella and Mushrooms"} />
 
+	<!-- Ergänze hier einen weiteren Nested-Aufruf -->
+
+	<!-- Nutze im folgenden Pizzainfo die spread-Methode -->
 	<Pizzainfo 
 		name = {pizza.name}	
 		diameter = {pizza.diameter}

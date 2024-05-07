@@ -1,8 +1,7 @@
 # Aufgabe 03 - Syling in Svelte
 
 ## Überblick
-In svelte kann man HTML direkt in eine Komponente rendern, bspw. wenn man Text aus einer Markdown-Datei importiert. Hierfür wird das Tag {@html ...} genutzt.
-Wie in HTML kann man mit svelte style-Tags hinzufügen und so bspw. den Style eines p-Elements belibig anpassen. 
+In der folgenden Aufgabe werdet ihr HTML direkt in einer Svelte-Komponente rendern und das Styling für ein p-Element ergänzen.
 
 
 ## Aufgaben 

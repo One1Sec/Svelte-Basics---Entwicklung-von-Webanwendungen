@@ -1,6 +1,6 @@
 
 <script>
-	import Nested from './Nested.svelte';
+	import Nested from './lib/Nested.svelte';
 	import Pizzainfo from './Pizzainfo.svelte';
 
 	const pizza = {
