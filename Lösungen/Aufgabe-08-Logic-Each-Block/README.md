@@ -17,7 +17,7 @@ Deine Aufgabe ist es, eine gegebene statische Liste in eine dynamische Liste mit
 
 ### Aufgabe 2: Implementiere den `{#each}`-Block für die Warenkorbpositionen
 
-Überarbeite den Warenkorb-Zusammenfassungsbereich, um Elemente dynamisch mithilfe des `{#each}`-Blocks zu rendern, wobei der Fokus auf Pizzen liegt, die eine Bestellmenge größer als null haben.
+Überarbeite den Warenkorb-Zusammenfassungsbereich, um Elemente dynamisch mithilfe des `{#each}`-Blocks zu rendern, wobei der Fokus auf Pizzen liegt, die eine Bestellmenge größer als null haben. z.B.: <li> {pizza.quantity} x {pizza.emoji} {pizza.name} </li>
 
 ### Aufgabe 3: Füge Schlüssel zu den `{#each}`-Blöcken hinzu
 
@@ -59,7 +59,7 @@ Hier ist die Vorlage für deine `App.svelte`. Folge den Kommentaren im Code, um 
   </ul>
   <div class="cart">
     <h2>Your Cart:</h2>
-    <ul><!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern (z.B.: <li> {pizza.quantity} x {pizza.emoji} {pizza.name}) --></ul>
+    <ul><!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern (z.B.: <li> {pizza.quantity} x {pizza.emoji} {pizza.name}) </li> --></ul>
   </div>
     <!--Aufgabe 3: füge in jedem `{#each}` block ein key hinzu, um sicherzustellen, dass Svelte jedes DOM-Element effizient verfolgen kann-->
 </main>
