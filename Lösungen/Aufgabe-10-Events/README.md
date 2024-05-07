@@ -89,7 +89,7 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
 
   function handleAddPizza(event) {
     const { topping } = event.detail;
-    if (cart[topping.id]) return; // <---keine doppelten toppings
+    if (cart.some((item) => item.id === topping.id)) return; // <---keine doppelten toppings
 
     // Aufgabe 2: Handle das addTopping Event hier
 

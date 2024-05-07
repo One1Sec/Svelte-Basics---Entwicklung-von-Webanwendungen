@@ -2,7 +2,7 @@
 
 ## Überblick 
 
-1. **Declaring props:** Um Daten auch außerhalb einer Komonente zu nutzen, kann in svelet vor der Deklarierung das Stichwort 'export' ergänzt werden. Mithilfe von 'export' kann dann auch außerhalb einer Komponente auf Props zugegriffen werden. Dafür wird bei der Deklarierung im script durch let/ const zusätzlich export geschrieben. 
+1. **Declaring props:** Um Daten auch außerhalb einer Komonente zu nutzen, kann in svelte vor der Deklarierung das Stichwort 'export' ergänzt werden. Mithilfe von 'export' kann dann auch außerhalb einer Komponente auf Props zugegriffen werden. Dafür wird bei der Deklarierung im script durch let/ const zusätzlich export geschrieben. 
 Um die Props in anderen Komponenten nutzen zu können, muss in diesem zusätzlich die Funktion 'import' genutzt werden. Diese wird in svelte genutzt, um Module, Komponenten oder andere JavaScript-Assets in eine Svelte-Datei zu importieren. 
 
 2. **Default values:** Props können zusätzlich mit einem default value versehen werden. Dieser kann bei der Deklaration vergeben werden. Wird eine exportierte Komponente ohne eine Antwortstütze hinzufügen, wird automatisch der default value zurückgegeben.

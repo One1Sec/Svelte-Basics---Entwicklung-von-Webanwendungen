@@ -1,8 +1,8 @@
 <script>
-  // Aufgabe 1: Gebe der Variable einen Standartwert (default should be 0)
+  // Aufgabe 1: Gebe der Variable einen Standartwert (standardmäßig 0)
   let pizzaCount; // <-- Your code here
 
-  // Aufgabe 2: Berechne den Gesamtpreis der Pizzen
+  // Aufgabe 2: Berechne den Gesamtpreis der Pizzen (1 Pizza = 10€)
   $: totalPrice = undefined; // <-- Your code here
 
   function orderPizza() {
