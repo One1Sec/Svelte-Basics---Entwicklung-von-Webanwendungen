@@ -1,5 +1,7 @@
 <script>
-
+  
+  let description = "Mario & Luigi's pizza service only uses <strong>fresh and local</strong> products 🍕🥦";
+  
   const pizzaGoomba = {id: 1, name:"Goomba's Special", price:8.00}
   const pizzaJoshi = {id: 2, name:"Joshi's Veggi", price:6.50}
 
@@ -47,7 +49,7 @@
 <main>
   <div id="header">
     <h1>Mario & Luigi's Pizza</h1>
-    <p>TODO Text von aufgabe 3 rein</p>
+    <p>{@html description}</p>
     <img id="logo" {src} {alt}/>
   </div>
   <div id="cart">
