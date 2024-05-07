@@ -1,154 +1,66 @@
-# Aufgabe 10 - Event Handling in Sve
+# Aufgabe 08 - Logik-Each-Block
 
-## Übersicht
+## Überblick
 
-Diese Übung verbessert dein Verständnis für das Event Handling in Svelte-Anwendungen. Du wirst am "Create Your Own Super Mario Pizza!" Bestellsystem arbeiten, mit Fokus auf das Dispatching und Handling von custom events, die Verwendung von event modifiers und die Implementierung von event forwarding.
+Diese Aufgabe soll dir helfen, den `{#each}`-Block von Svelte zu üben, um Listen dynamisch zu rendern statt sie zu hardcoden. Du wirst eine statische Darstellung einer Pizzaliste in eine dynamische Liste basierend auf einem Array von Pizzen umwandeln.
 
 ## Ziele
 
-- Implementiere und dispatche custom component events mit `createEventDispatcher`.
-- Verwende event modifiers, um Benutzerinteraktionen zu steuern.
-- Wende DOM event forwarding an, um DOM events über verschiedene Komponenten zu verwalten.
+- Implementiere den `{#each}`-Block, um Listenpunkte dynamisch zu rendern.
+- Verstehe und wende die Verwendung von Schlüsseln an, um das Rendern zu optimieren.
 
 ## Aufgaben
 
-### Aufgabe 1: Dispatching von Component Events
+### Aufgabe 1: Implementiere den `{#each}`-Block für die Pizzen
 
-Ändere `PizzaList.svelte`, um ein Event zu dispatchen, wenn ein Topping hinzugefügt wird. Dieses Event sollte die Details des Toppings enthalten.
+Deine Aufgabe ist es, eine gegebene statische Liste in eine dynamische Liste mithilfe des `{#each}`-Blocks umzuarbeiten. Du sollst das Array `pizzas` verwenden, um Listenpunkte dynamisch zu erstellen.
 
-**Anweisungen:**
+### Aufgabe 2: Implementiere den `{#each}`-Block für die Warenkorbpositionen
 
-- Finde die Funktion `addToPizza` in `PizzaList.svelte`.
-- Verwende `createEventDispatcher`, um ein `addTopping` Event zu dispatchen, das die Details des Toppings enthält.
+Überarbeite den Warenkorb-Zusammenfassungsbereich, um Elemente dynamisch mithilfe des `{#each}`-Blocks zu rendern, wobei der Fokus auf Pizzen liegt, die eine Bestellmenge größer als null haben.
 
-### Aufgabe 2: Handling von Component Events in App.svelte
+### Aufgabe 3: Füge Schlüssel zu den `{#each}`-Blöcken hinzu
 
-Richte `App.svelte` ein, um das `addTopping` Event von `PizzaList.svelte` zu handhaben. Aktualisiere das cart Array entsprechend, um neue Toppings zu verwalten.
+Ändere sowohl die `{#each}`-Blöcke für Pizzen als auch für Warenkorbpositionen so ab, dass `keys` eingefügt werden. Verwende die eindeutigen Id's für Pizzen, um sicherzustellen, dass Svelte jedes DOM-Element effizient verfolgen kann. Diese Praxis reduziert potenzielle Fehler und verbessert die Leistung deiner Anwendung sobald es um größere und vielleicht auch dynamische Daten geht.
 
-**Anweisungen:**
+## Anweisungen
 
-- Implementiere den event handler in `App.svelte`, um die Topping-Daten zu empfangen und das cart zu aktualisieren, wobei Duplikate vermieden werden.
-
-### Aufgabe 3: Erstellen und Dispatchen eines custom Events in OrderSummary.svelte zum Löschen von Toppings in App.svelte
-
-Repliziere Aufgabe 1 und 2 für ein customEvent `removeTopping` in der `OrderSummary.svelte`
-
-**Anweisungen:**
-
-- Füge `createEventDispatcher` in `OrderSummary.svelte` ein.
-- Füge eine Funktion hinzu, die ein `removeTopping` Event dispatcht. Dieses Event soll die ID des zu entfernenden Toppings als Detail enthalten.
-- Binde in `App.svelte` die `handleRemoveTopping` Funktion an das custom Event an.
-
-### Aufgabe 4: Implementiere Event Forwarding in OrderButton
-
-Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App.svelte` für die Bestellabschluss weiterleitet und nur `once` geklickt werden kann.
-
-**Anweisungen:**
-- Leite das click event weiter in `OrderButton.svelte`
-- Verbinde das `OrderButton` click event mit einer Funktion in `App.svelte`, die die Bestellung abschließt.
-- Wende den `once` modifier auf den OrderButton in `App.svelte` an, damit der Bestellprozess nicht mehrfach getätigt werden kann.
-
-## Code Vorlagen
-
-**PizzaList.svelte**
+Hier ist die Vorlage für deine `App.svelte`. Folge den Kommentaren im Code, um die Aufgaben zu vervollständigen.
 
 ```svelte
 <script>
-  import { createEventDispatcher } from 'svelte';
-  const dispatch = createEventDispatcher();
-
-  let toppings = [
-    { id: 1, name: "Goomba's Mushroom", emoji: "🍄" },
-    { id: 2, name: "Yoshi's Peppers", emoji: "🌶️" },
-    { id: 3, name: "Bowser's Hot Sauce", emoji: "🔥" },
-    { id: 4, name: "Peach's Pineapple", emoji: "🍍" },
+  let pizzas = [
+    { id: 1, name: "Goomba's Special", emoji: "🍄", quantity: 0 },
+    { id: 2, name: "Yoshi's Veggie", emoji: "🦕", quantity: 0 },
+    { id: 3, name: "Bowser's Blaze", emoji: "🐢", quantity: 0 },
+    { id: 4, name: "Peach's Royal", emoji: "👑", quantity: 0 },
   ];
 
-  function addToPizza(topping) {
-    // Aufgabe 1: Dispatche ein Event mit den Topping-Informationen
-    // <-- code hier -->
-  }
-</script>
-
-<ul>
-  {#each toppings as topping (topping.id)}
-    <li>
-      <button on:click={() => addToPizza(topping)}>
-        Add {topping.emoji} {topping.name}
-      </button>
-    </li>
-  {/each}
-</ul>
-```
-
-**App.svelte**
-
-```svelte
-<script>
-  import PizzaList from "./lib/PizzaList.svelte";
-  import OrderSummary from "./lib/OrderSummary.svelte";
-  import OrderButton from "./lib/OrderButton.svelte";
-
-  let cart = [];
-
-  function handleAddPizza(event) {
-    const { topping } = event.detail;
-    if (cart.some((item) => item.id === topping.id)) return; // <---keine doppelten toppings
-
-    // Aufgabe 2: Handle das addTopping Event hier
-
+  // Funktionen zum Ändern der Pizza-Mengen sind bereits implementiert
+  function addToCart(pizza) {
+    pizza.quantity += 1;
+    pizzas = pizzas.slice(); // Triggers reactivity
   }
 
-  function handleOrder() {
-     if (cart.length === 0) return;
-
-    const audio = new Audio(order_confirm);
-    audio.play();
-    const toppings = cart.map((item) => item.name).join(", ");
-    alert(`Deine Pizza mit ${toppings} wird gebacken🍕🎉`);
-    cart = [];
+  function removeFromCart(pizza) {
+    if (pizza.quantity > 0) {
+      pizza.quantity -= 1;
+      pizzas = pizzas.slice(); // Triggers reactivity
+    }
   }
-
-    function handleRemoveTopping(event) {
-    cart = cart.filter((item) => item.id !== event.detail.id);
-  }
+  // Declaration, um nur ausgewählte Pizzen anzuzeigen
+  $: cartItems = pizzas.filter(p => p.quantity > 0);
 </script>
 
 <main>
-  <h1>Create Your Own Super Mario Pizza!</h1>
-  <PizzaList on:addTopping={handleAddPizza} />
-  <OrderSummary {cart} /><!--Aufgabe 3 hier-->
-  <OrderButton /> <!-- Aufgabe 4: Verbinde das click event des OrderButton mit der passenden Funktion und füge den 'once' Modifier hinzu -->
-</main>
-```
-
-**OrderSummary.svelte**
-
-```svelte
-<script>
-  export let cart;
-
-  // Aufgabe 3: Initialisiere den Dispatcher.
-
-  // Aufgabe 3: Implementiere die Funktion zum Dispatchen des Custom Events 'removeTopping' mit der ID als Parameter.
-</script>
-
-<h2>Deine Bestellung:</h2>
-<div class="container">
+  <h1>Mario & Luigi's Pizza Ordering System</h1>
   <ul>
-    {#each cart as item (item.id)}
-      <li>
-        {item.emoji} {item.name}
-        <button on:click={() => null}>x</button> <!-- Aufgabe 3: Rufe die Funktion `removeTopping` auf und übergebe die ID des items beim Klicken. -->
-      </li>
-    {/each}
+     <!-- Aufgabe 1: Ersetze statische Listenpunkte durch dynamische Punkte mithilfe von `{#each}` -->
   </ul>
-</div>
-```
-
-**OrderButton.svelte**
-
-```svelte
-<!--Aufgabe 4: Leite das DOM event 'click' weiter -->
-<button> Complete Order </button>
+  <div class="cart">
+    <h2>Your Cart:</h2>
+    <ul><!-- Aufgabe 2: Verwende `{#each}` um die Warenkorb-Zusammenfassung dynamisch mit keys zu rendern (z.B.: <li> {pizza.quantity} x {pizza.emoji} {pizza.name}) --></ul>
+  </div>
+    <!--Aufgabe 3: füge in jedem `{#each}` block ein key hinzu, um sicherzustellen, dass Svelte jedes DOM-Element effizient verfolgen kann-->
+</main>
 ```

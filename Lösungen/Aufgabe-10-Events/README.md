@@ -118,7 +118,7 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
   <h1>Create Your Own Super Mario Pizza!</h1>
   <PizzaList on:addTopping={handleAddPizza} />
   <OrderSummary {cart} /><!--Aufgabe 3 hier-->
-  <OrderButton /> <!--Aufgabe 4: Leite das Klick-Event an handleOrder weiter. Verwende 'once' um Doppelbestellungen zu verhindern.-->
+  <OrderButton /> <!-- Aufgabe 4: Verbinde das click event des OrderButton mit der passenden Funktion und füge den 'once' Modifier hinzu -->
 </main>
 ```
 
@@ -126,14 +126,11 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
 
 ```svelte
 <script>
-  import { createEventDispatcher } from 'svelte';
   export let cart;
 
-  const dispatch = createEventDispatcher();
+  // Aufgabe 3: Initialisiere den Dispatcher.
 
-  function removeTopping(id) {
-    dispatch('removeTopping', { id });
-  }
+  // Aufgabe 3: Implementiere die Funktion zum Dispatchen des Custom Events 'removeTopping' mit der ID als Parameter.
 </script>
 
 <h2>Deine Bestellung:</h2>
@@ -142,7 +139,7 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
     {#each cart as item (item.id)}
       <li>
         {item.emoji} {item.name}
-        <button on:click={() => removeTopping(item.id)}>x</button>
+        <button on:click={() => null}>x</button> <!-- Aufgabe 3: Rufe die Funktion `removeTopping` auf und übergebe die ID des items beim Klicken. -->
       </li>
     {/each}
   </ul>
@@ -152,5 +149,6 @@ Stelle sicher, dass die `OrderButton` Komponente das click event korrekt an `App
 **OrderButton.svelte**
 
 ```svelte
-<button on:click> Complete Order </button>
+<!--Aufgabe 4: Leite das DOM event 'click' weiter -->
+<button> Complete Order </button>
 ```
