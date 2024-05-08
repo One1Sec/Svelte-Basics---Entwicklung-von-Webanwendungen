@@ -13,22 +13,37 @@ Hier findet ihr mehr Infos zur Installation von Svelte: https://svelte.dev/blog/
 
 **Entweder:**
 Terminal in VS Code öffnen und zum Ordner navigieren, in dem das Projekt platziert werden soll
+
 Terminal-Eingabe: npm install -g vite
+
 npm create vite@latest
+
 Projekt name eingeben (app)
+
 Svelte framework auswählen
+
 Javascript auswählen
+
 Zu Projekt navigieren: cd {Projektname}
+
 Terminal-Eingabe: npm install zum installieren der dependencies
+
 Terminal-Eingabe: npm run dev
 
 **ODER:**
 Terminal in VS Code öffnen und zum Ordner navigieren, in dem das Projekt platziert werden soll
+
 Terminal-Eingabe: npm init vite
+
 Projektname eingeben (app)
+
 Svelte framework auswählen
+
 Java Script auswählen
+
 Zu Projekt navigieren: cd {Projektname}
+
 Terminal-Eingabe: npm install (installieren der Abhängigkeiten)
+
 Terminal-Eingabe: npm run dev (lokaler Server)
 
