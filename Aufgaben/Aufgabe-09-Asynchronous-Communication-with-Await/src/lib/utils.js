@@ -7,8 +7,5 @@ export async function processOrder() {
         return "Your order has bee processed and will be deliverd to you soon"
     }else{
         throw new Error("Something went wrong, please try again")
-    }
-
-
-    
+    }  
 }
