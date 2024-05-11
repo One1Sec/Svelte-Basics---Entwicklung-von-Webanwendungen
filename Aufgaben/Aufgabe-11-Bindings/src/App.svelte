@@ -6,12 +6,12 @@
   const goombaPizza = "Goomba's Special"
   const yoshiPizza = "Joshi's Veggi"
 
+  //Nutze die folgenden Variablen, um die Aufgaben zu erledigen
   let address = {street:"",number:"", city:"", plz:""}
   let numberOfGoombaPizzas = 0
   let numberOfJoshiPizzas = 0
  
-
-  let payment_methods = ["Payment by direct debit", "Paypal", "Credit/Debit card"]
+  const payment_methods = ["Payment by direct debit", "Paypal", "Credit/Debit card"]
   let selected_payment_method = ""
 
   function submitRequest (){
@@ -30,28 +30,20 @@
     <h2>Your Order</h2>
     <label>
       <p> Goomba's Special </p>
-      <input type="number" bind:value={numberOfGoombaPizzas} min="0" max="10" />
-      <input type="range" bind:value={numberOfGoombaPizzas} min="0" max="10" />
+      <!-- Dein Code hier -->
+      <input/>
     </label>
     <label>
       <p> Joshi's Veggi </p>
-      <input type="number" bind:value={numberOfJoshiPizzas} min="0" max="10" />
-      <input type="range" bind:value={numberOfJoshiPizzas} min="0" max="10" />
+      <!-- Dein Code hier -->
+      <input/>
     </label>
     <h2>Address</h2>
-    <input class="textfield" bind:value={address.street} maxlength=100 placeholder="Street"/>
-    <input class="textfield" bind:value={address.number} maxlength=20 placeholder="Number"/>
-    <input class="textfield" bind:value={address.city} maxlength=100 placeholder="City"/>
-    <input class="textfield" bind:value={address.plz} maxlength=20 placeholder="PLZ"/>
-    <p> <strong>Your addess is: </strong> <br/> {address.street} {address.number} <br/> {address.plz} {address.city}</p>
+    <!-- Dein Code hier. Nutze für Text-Input-Felder class="textfield"-->
+    <p> <strong>Your addess is: </strong></p>
     <h2>Payment method</h2>
-    {#each payment_methods as method}
-      <label>
-        <input type="radio" name="scoops" value={method} bind:group={selected_payment_method}/>
-        {method}
-      </label>
-    {/each}
-    <p> <strong>Your preferred payment method:</strong> {selected_payment_method}</p>
+      <!-- Dein Code hier-->
+    <p> <strong>Your preferred payment method:</strong> </p>
     <button on:click={submitRequest}> Submit your request </button>
   </div>
 </main>
@@ -64,7 +56,7 @@
     height: 200px;
     object-fit: cover;
   }
-
+  
   main {
     font-family: "Comic Sans MS", cursive;
     text-align: center;
