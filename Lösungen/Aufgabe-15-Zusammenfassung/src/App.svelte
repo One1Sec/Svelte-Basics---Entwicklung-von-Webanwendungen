@@ -7,6 +7,7 @@
   import { onMount } from "svelte";
   import orderSucess from "./assets/sucess.mp3";
   import orderFailed from "./assets/fail.mp3";
+  import Contact from "./lib/Contact.svelte";
 
   let isOrderProcessing = false;
 
@@ -33,6 +34,7 @@
       on:orderFailed={() => orderFailure.play()}
     />
   {/if}
+  <Contact />
   <Footer />
 </main>
 

@@ -30,7 +30,7 @@
 
 <style>
   .container {
-    background-color: #e2dfd0;
+    background-color: #ffd6bf;
     padding: 2rem;
     display: flex;
     flex-direction: column;
