@@ -6,25 +6,25 @@ In der folgenden Aufgabe werden mithilfe von Stores eine Anzeige der verstrichen
 
 ## Aufgaben
 
-1. **Dervied-Stores**: In dieser Aufgabe wird mithilfe von 'elapsed' angezeigt, wie lange die Seite bereits geöffnet ist. Nach ca. 20 Sekunden soll eine Hinweis auftauchen.
+1. **Dervied-Stores:** In dieser Aufgabe wird mithilfe von 'elapsed' angezeigt, wie lange die Seite bereits geöffnet ist. Nach ca. 20 Sekunden soll ein Hinweis auftauchen.
 
 Wechsle zuerst zu "stores.js"
 
 - Importiere "readable" und "derived" aus 'svelte/store'
 - Deiniere die exportierte Variable "elapsed". Da diese vom Store "time" anhängt, handelt es sich um einen derived store.
-	Weise "elapsed" die Funktion "derived" und rufe in dieser "time" auf. 
-- Ergänze im letzten Schritt die Berechnunng für die verstrichene Zeit. Nutze dafür die Differenz zwischen der Variable "startTime", die ein neues Datumerstellt, und dem Store "time". (Hinweis: Math.round nicht vergessen)
+	Weise "elapsed" die Funktion "derived" zu und rufe in dieser "time" auf. 
+- Ergänze im letzten Schritt in derived() die Berechnunng für die verstrichene Zeit. Nutze dafür die Differenz zwischen der Variable "startTime", die ein neues Datum erstellt, und dem Store "time". (Hinweis: Math.round nicht vergessen)
  
-2. **Custom stores:**: In dieser Aufgabe wird ein custom Store für das zusätzliche Bestellen von Einwegbesteck erstellt, der mit zwei Buttons verknüpft ist.
+2. **Custom stores:** In dieser Aufgabe wird ein custom Store für das zusätzliche Bestellen von Einwegbesteck erstellt, der mit zwei Buttons verknüpft ist.
 
 Wechsle zuerst zu "stores.js"
 
-1. Definire in der Funktion "createCount" zunächst den writabel Store mit dem Startwert 0. 
+- Definiere in der Funktion "createCount" zunächst den writabel Store mit dem Startwert 0. 
 Dieser soll ein Objekt mit den 3 Methoden "subscribe", "set" und "update" zurückgeben.
 
 	Hinweis: Die Methode **subscribe** wird verwendet, um eine Callback-Funktion zu "abonnieren", die aufgerufen wird, wenn sich der Wert des Stores ändert.
 	
-2. Damit der custom Store in dieser Aufgabe funktionsfähig ist, müssen in store.js in der return-Funktion 'update' und 'set' ergänzt werden.
+- Damit der custom Store in dieser Aufgabe funktionsfähig ist, müssen in store.js in der return-Funktion 'update' und 'set' ergänzt werden.
     - der +-Button soll den Speicher um 1 erhöhen (-> update)
     - der reset-Button soll den Speicher zurück auf 0 setzen (->reset)
 
