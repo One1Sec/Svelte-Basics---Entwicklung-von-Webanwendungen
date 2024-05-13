@@ -9,8 +9,8 @@ In dieser Übung ergänzt ihr den Code, sodass alle Props richtig dargestellt un
 
 2. **Default values:** Ergänze in Nested.svelte den default value für 'pizzaGoomba' und rufe die Komponente erneut auf, jedoch ohne wie im Beispiel einen Input zu geben.
 
-3. **Spread props:** Pizzainfo.svelte enthält ein p-Element und es werden weitere propsdeklariert und exportiert.
-In App.svelte wurde vergessen, den Wert für 'toppings' zu referenzieren. Da die props aus Pizzainfo.svelte den erwarteten Werten entsprechen, können alternativ spread props genutzt werden.
+3. **Spread props:** Pizzainfo.svelte enthält ein p-Element und es werden weitere props deklariert und exportiert.
+In App.svelte wurde bei einem Aufruf von "Pizzainfo" vergessen, den Wert für 'toppings' zu referenzieren. Da die props aus Pizzainfo.svelte den erwarteten Werten entsprechen, können alternativ spread props genutzt werden.
 Ersetze den vorhanden Pizzainfo-Aufruf, damit die Nachricht im Browser korrekt angezeigt wird. 
 
 ```svelte

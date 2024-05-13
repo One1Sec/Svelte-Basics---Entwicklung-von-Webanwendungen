@@ -15,6 +15,8 @@ Ziel der ersten Aufgabe ist das Implementieren der onMount-Funktion, damit der S
 
 ### onDestroy
 
+Ziel dieser Aufgabe, ist dass der Button "Complete order" nach dem Anklicken verschwindet und aus dem DOM gelöscht wird.
+
 1. Importiere "onDestroy" aus "svelte"
 
 Im Script werden bereits die folgenden Variablen deklariert:
@@ -25,8 +27,24 @@ In der Funktion handleOrder wird der Wert für showOrderButton nach dem Anklicke
 Damit der Button aus der DOM entfernt wird, soll zusätzlich onDestroy implementiert werden: 
 
 2. Implementiere die Funktion onDestroy
-3. Überprüfe, ob das orderButton-Element existiert und ein übergeordnetes Element (parentNode) hat
+3. Überprüfe in der Funktion, ob das orderButton-Element existiert und ein übergeordnetes Element (parentNode) hat
 4. Entferne das orderButton-Element aus seinem übergeordneten Element (Hinweis: removeChild)
+
+### tick
+
+Ziel der folgenden Aufgabe ist, dass nach dem Klicken des Buttons "This Weeks Special 🎉" eine Textbox auftaucht und nach ca. 3 Sekunden wieder verschwindet. 
+
+Wechsel hierfür zuerst zu "WeeklySpecial.svelte"
+
+1. Importiere "tick" aus "svelte"
+2. Implementiere die asynchrone Funktion "showNotification", die die message aus "showLimitedEditionNotification" übergeben bekommt.
+    Damit die Funktion korrekt funktioniert müssen zunächst folgende Variablen deklariert werden:
+    - notificationMessage - hier soll die Nachricht übergeben werden, die letztendlich ausgegeben werden soll
+    - notificationVisible - boolean, der steuert, ob die Nachricht angezeit wird oder nicht (siehe If-Bedingung zu notificationVisible)
+3. Implementiere tick() um sicherustellen, dass vor dem Anzeigen der Benachrichtigung die Benutzeroberfläche und die Variable notificationVisible korrekt aktualisiert werden
+4. Verwende die Funktion setTimeout, die den boolean von notificationVisible ändert und dafür sorgt, dass die Nachricht nach ca. 3 Sekunden wieder verschwindet
+
+## App.svelte
 
 ```svelte
 <script>
@@ -82,17 +100,7 @@ Damit der Button aus der DOM entfernt wird, soll zusätzlich onDestroy implement
 </main>
 ```
 
-### tick
-
-Wechsel hierfür zuerst zu "WeeklySpecial.svelte"
-
-1. Importiere "tick" aus "svelte"
-2. Implementiere die asynchrone Funktion "showNotification", die die message aus "showLimitedEditionNotification" übergeben bekommt.
-    Damit die Funktion korrekt funktioniert müssen zunächst folgende Variablen deklariert werden:
-    - notificationMessage - hier soll die Nachricht übergeben werden, die letztendlich ausgegeben werden soll
-    - notificationVisible - boolean, der steuert, ob die Nachricht angezeit wird oder nicht (siehe If-Bedingung zu notificationVisible)
-3. Implementiere tick() um sicherustellen, dass vor dem Anzeigen der Benachrichtigung die Benutzeroberfläche und die Variable notificationVisible korrekt aktualisiert werden
-4. Implementiere die Funktion setTimeout, die den boolean von notificationVisible ändert und dafür sorgt, dass die Nachricht nach ca. 3 Sekunden wieder verschwindet
+## WeeklySpecial.svelte 
 
 ```svelte
 <script>

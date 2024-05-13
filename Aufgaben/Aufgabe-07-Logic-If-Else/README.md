@@ -12,7 +12,7 @@ Ergänze den Code damit folgende Nachrichten abgebildet werden:
     
 **2.** wenn weniger als 5 Pizzen im Wahrenkorb sind, soll eine Mitteilung erscheinen, die den Käufer darauf hinweist, dass die Liferkosten ab 5 Pizzen gratis sind und erfragt, ob dieser sicher nicht mehr bestellen möchte.
     
-**3.** wenn zwischen 5 und 10 Pizzen im Wahrenkorb siind, soll die folgende Mittilung erscheinen: '{Anzahl Pizzen} - Pizzas sounds like a party🍕🥳'
+**3.** wenn zwischen 5 und 10 Pizzen im Wahrenkorb sind, soll die folgende Mittilung erscheinen: '{Anzahl Pizzen} - Pizzas sounds like a party🍕🥳'
     
 
 ```svelte

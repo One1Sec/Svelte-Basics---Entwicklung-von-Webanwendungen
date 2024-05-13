@@ -6,12 +6,12 @@ In der folgenden Aufgabe werden mithilfe von Stores eine Anzeige der verstrichen
 
 ## Aufgaben
 
-1. **Dervied-Stores:** In dieser Aufgabe wird mithilfe von 'elapsed' angezeigt, wie lange die Seite bereits geöffnet ist. Nach ca. 20 Sekunden soll ein Hinweis auftauchen.
+1. **Dervied-Stores:** Ziel dieser Aufgabe ist die korrekte Anzeige, wie lange die Seite bereits geöffnet ist. Nach ca. 20 Sekunden soll der Hinweis "Are you still there" auftauchen.
 
 Wechsle zuerst zu "stores.js"
 
 - Importiere "readable" und "derived" aus 'svelte/store'
-- Deiniere die exportierte Variable "elapsed". Da diese vom Store "time" anhängt, handelt es sich um einen derived store.
+- Definiere die exportierte Variable "elapsed". Da diese vom Store "time" abhängt, handelt es sich um einen derived Store.
 	Weise "elapsed" die Funktion "derived" zu und rufe in dieser "time" auf. 
 - Ergänze im letzten Schritt in derived() die Berechnunng für die verstrichene Zeit. Nutze dafür die Differenz zwischen der Variable "startTime", die ein neues Datum erstellt, und dem Store "time". (Hinweis: Math.round nicht vergessen)
  
@@ -22,13 +22,21 @@ Wechsle zuerst zu "stores.js"
 - Definiere in der Funktion "createCount" zunächst den writabel Store mit dem Startwert 0. 
 Dieser soll ein Objekt mit den 3 Methoden "subscribe", "set" und "update" zurückgeben.
 
-	Hinweis: Die Methode **subscribe** wird verwendet, um eine Callback-Funktion zu "abonnieren", die aufgerufen wird, wenn sich der Wert des Stores ändert.
+	Info: Die Methode **subscribe** wird verwendet, um eine Callback-Funktion zu "abonnieren", die aufgerufen wird, wenn sich der Wert des Stores ändert.
 	
-- Damit der custom Store in dieser Aufgabe funktionsfähig ist, müssen in store.js in der return-Funktion 'update' und 'set' ergänzt werden.
+- Damit der custom Store in dieser Aufgabe funktionsfähig ist, müssen in stores.js in der return-Funktion 'update' und 'set' ergänzt werden:
     - der +-Button soll den Speicher um 1 erhöhen (-> update)
     - der reset-Button soll den Speicher zurück auf 0 setzen (->reset)
 
-## Code aus stores.js
+
+3. **Store bindings**: In dieser Aufgabe wird ein Store aus store_bindings.js importiert. Mithilfe eines Buttons soll eine Antwort aus dem Inputfeld an den Store gebunden werden. Damit dies funktioniert, muss folgender Code ergänzt werden:
+
+- bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
+
+- Funktion für Button: Der Button soll es ermöglichen, automatisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal der Text "I am satisfied" hinzugefügt werden. 
+Ergänze dafür in App.svelte die fehlende Funktion für den Button "I am satisfied!". Diese muss auf den store "feedback" verweisen.
+
+## stores.js
 
 ```javascript
 // Berechnung der verstrichenen Zeit
@@ -64,14 +72,8 @@ function createCount() {
 export const count = createCount();
 ```
 
-3. **Store bindings**: In dieser Aufgabe wird ein Store aus store_bindings.js importiert. Mithilfe eines Buttons soll eine Antwort aus dem Inputfeld an den Store gebunden werden. Damit dies funktioniert, muss folgender Code ergänzt werden:
 
-- bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
-
-- Funktion für Button: Der Button soll es ermöglichen, automtisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal "I am satisfied" hinzugefügt werden. 
-Ergänze dafür in App.svelte die fehlenden Funktion für den Button "I am satisfied!". Diese muss auf den store "feedback" verweisen.
-
-## Code aus App.svelte
+## App.svelte
 
 ```svelte
 <script>
