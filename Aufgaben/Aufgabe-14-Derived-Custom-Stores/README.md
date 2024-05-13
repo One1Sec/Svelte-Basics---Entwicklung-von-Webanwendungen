@@ -66,9 +66,9 @@ export const count = createCount();
 
 3. **Store bindings**: In dieser Aufgabe wird ein Store aus store_bindings.js importiert. Mithilfe eines Buttons soll eine Antwort aus dem Inputfeld an den Store gebunden werden. Damit dies funktioniert, muss folgender Code ergänzt werden:
 
-1. bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
+- bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
 
-2. Funktion für Button: Der Button soll es ermöglichen, automtisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal "I am satisfied" hinzugefügt werden. 
+- Funktion für Button: Der Button soll es ermöglichen, automtisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal "I am satisfied" hinzugefügt werden. 
 Ergänze dafür in App.svelte die fehlenden Funktion für den Button "I am satisfied!". Diese muss auf den store "feedback" verweisen.
 
 ## Code aus App.svelte
