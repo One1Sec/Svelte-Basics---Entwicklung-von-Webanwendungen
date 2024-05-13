@@ -6,34 +6,40 @@ In der folgenden Aufgabe werden mithilfe von Stores eine Anzeige der verstrichen
 
 ## Aufgaben
 
-1. **Dervied-Stores:** Ziel dieser Aufgabe ist die korrekte Anzeige, wie lange die Seite bereits geöffnet ist. Nach ca. 20 Sekunden soll der Hinweis "Are you still there" auftauchen.
+### Dervied-Stores
+
+Ziel dieser Aufgabe ist die korrekte Anzeige, wie lange die Seite bereits geöffnet ist. Nach ca. 20 Sekunden soll der Hinweis "Are you still there" auftauchen.
 
 Wechsle zuerst zu "stores.js"
 
-- Importiere "readable" und "derived" aus 'svelte/store'
-- Definiere die exportierte Variable "elapsed". Da diese vom Store "time" abhängt, handelt es sich um einen derived Store.
+1. Importiere "readable" und "derived" aus 'svelte/store'
+2. Definiere die exportierte Variable "elapsed". Da diese vom Store "time" abhängt, handelt es sich um einen derived Store.
 	Weise "elapsed" die Funktion "derived" zu und rufe in dieser "time" auf. 
-- Ergänze im letzten Schritt in derived() die Berechnunng für die verstrichene Zeit. Nutze dafür die Differenz zwischen der Variable "startTime", die ein neues Datum erstellt, und dem Store "time". (Hinweis: Math.round nicht vergessen)
+3. Ergänze im letzten Schritt in derived() die Berechnunng für die verstrichene Zeit. Nutze dafür die Differenz zwischen der Variable "startTime", die ein neues Datum erstellt, und dem Store "time". (Hinweis: Math.round nicht vergessen)
  
-2. **Custom stores:** In dieser Aufgabe wird ein custom Store für das zusätzliche Bestellen von Einwegbesteck erstellt, der mit zwei Buttons verknüpft ist.
+### Custom stores
+
+ In dieser Aufgabe wird ein custom Store für das zusätzliche Bestellen von Einwegbesteck erstellt, der mit zwei Buttons verknüpft ist.
 
 Wechsle zuerst zu "stores.js"
 
-- Definiere in der Funktion "createCount" zunächst den writabel Store mit dem Startwert 0. 
+1. Definiere in der Funktion "createCount" zunächst den writabel Store mit dem Startwert 0. 
 Dieser soll ein Objekt mit den 3 Methoden "subscribe", "set" und "update" zurückgeben.
 
 	Info: Die Methode **subscribe** wird verwendet, um eine Callback-Funktion zu "abonnieren", die aufgerufen wird, wenn sich der Wert des Stores ändert.
 	
-- Damit der custom Store in dieser Aufgabe funktionsfähig ist, müssen in stores.js in der return-Funktion 'update' und 'set' ergänzt werden:
+2. Damit der custom Store in dieser Aufgabe funktionsfähig ist, müssen in stores.js in der return-Funktion 'update' und 'set' ergänzt werden:
     - der +-Button soll den Speicher um 1 erhöhen (-> update)
     - der reset-Button soll den Speicher zurück auf 0 setzen (->reset)
 
 
-3. **Store bindings**: In dieser Aufgabe wird ein Store aus store_bindings.js importiert. Mithilfe eines Buttons soll eine Antwort aus dem Inputfeld an den Store gebunden werden. Damit dies funktioniert, muss folgender Code ergänzt werden:
+### Store bindings
 
-- bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
+In dieser Aufgabe wird ein Store aus store_bindings.js importiert. Mithilfe eines Buttons soll eine Antwort aus dem Inputfeld an den Store gebunden werden. Damit dies funktioniert, muss folgender Code ergänzt werden:
 
-- Funktion für Button: Der Button soll es ermöglichen, automatisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal der Text "I am satisfied" hinzugefügt werden. 
+1. bind: Das bind-Attribut synchronisiert den Wert eines HTML-Elements, in diesem Fall der des input-Felds. Im Code in App.svelte muss das fehlende "bind:" vor dem value in 'input' stehen.
+
+2. Funktion für Button: Der Button soll es ermöglichen, automatisch durch einen Klick positives Feedback in das auszufüllende Feld hinzuzufügen. Sobald er angeklickt wird, soll automatisch einmal der Text "I am satisfied" hinzugefügt werden. 
 Ergänze dafür in App.svelte die fehlende Funktion für den Button "I am satisfied!". Diese muss auf den store "feedback" verweisen.
 
 ## stores.js
