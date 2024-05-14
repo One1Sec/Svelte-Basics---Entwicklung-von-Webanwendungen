@@ -14,7 +14,7 @@
 <style>
   .hero {
     color: white;
-    background-color: #093301;
+    background-color: #FF5F00;
     padding: 2rem;
     display: flex;
     justify-content: center;

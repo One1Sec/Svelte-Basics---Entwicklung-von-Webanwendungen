@@ -4,7 +4,7 @@
 
 <footer class="footer">
   <div class="footer-content">
-    <h3>Mario's Pizza</h3>
+    <h3>MMario & Luigi's Pizza</h3>
     <p>Best pizza in the Mushroom Kingdom since 1985!</p>
     <ul class="footer-links">
       <li>Home</li>
@@ -12,7 +12,7 @@
       <li>Locations</li>
       <li>Contact Us</li>
     </ul>
-    <p class="copyright">© {year} Mario's Pizza. All rights reserved.</p>
+    <p class="copyright">© {year} Mario & Luigi's Pizza. All rights reserved.</p>
   </div>
 </footer>
 

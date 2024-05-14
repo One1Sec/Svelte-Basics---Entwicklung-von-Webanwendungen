@@ -2,7 +2,7 @@
 
 ## Übersicht
 
-Diese Übung fasst alle gelernten Svelte-Konzepte zusammen, indem Sie eine Pizza-Bestellseite im Mario & Luigi's Pizza-Theme von Nintendo erstellen. Die Aufgaben umfassen die Definition von Variablen, die Erstellung und Verwendung von Stores, das dynamische Rendern von Komponenten, Event Handling und Bindings.
+Diese Übung fasst alle gelernten Svelte-Konzepte zusammen, indem ihr eine Pizza-Bestellseite im Mario & Luigi's Pizza-Theme erstellt. Die Aufgaben umfassen die Definition von Variablen, die Erstellung und Verwendung von Stores, das dynamische Rendern von Komponenten, Event Handling und Bindings.
 
 ## Ziele
 
