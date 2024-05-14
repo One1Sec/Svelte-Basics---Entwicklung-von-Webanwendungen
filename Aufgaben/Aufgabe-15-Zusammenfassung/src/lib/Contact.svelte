@@ -6,7 +6,6 @@
 
   // Ziel: Verwende Bindings, um das Feedback-Formular mit den Variablen zu verknüpfen
 
-
   let message = ""; // Bindings: binde diese Variable mit einem Textfeld
 
   let ratings = [
@@ -52,11 +51,10 @@
           </span>
           <span>{rating.value}</span>
           <!-- Aufgabe 5: Verwende bind, um den Wert der Bewertung zu binden -->
-          <!-- Aufgabe 5: Füge den Event-Handler im on:change hinzu -->
           <Slider
             style="max-width: 200px; flex-grow: 1;"
             value={rating.value}
-            on:change={(event) => console.log("Hinweis: handleRatingChange")}
+            on:change={(event) => handleRatingChange(event, rating.id)}
             min={1.0}
             max={5.0}
           />
