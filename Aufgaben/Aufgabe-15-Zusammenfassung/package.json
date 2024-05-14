@@ -1,0 +1,23 @@
+{
+  "name": "aufgabe-15-zusammenfassung",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@smui/button": "^7.0.0",
+    "@smui/fab": "^7.0.0",
+    "@smui/slider": "^7.0.0",
+    "@smui/textfield": "^7.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "svelte": "^4.2.12",
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "svelte-material-ui": "^7.0.0"
+  }
+}
