@@ -381,6 +381,7 @@ Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook 
 
 - Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook.
 - Verwende einen `if`-Block, um `OrderProcess` anzuzeigen, wenn `isOrderProcessing` true ist.
+- Füge der `OrderProcess`-Komponente Events hinzu, die beim Schließen des Dialogs `isOrderProcessing` auf `false` setzen und die entsprechenden Sounds abspielen (`orderCompleted` oder `orderFailure`).
 
 **Code:**
 

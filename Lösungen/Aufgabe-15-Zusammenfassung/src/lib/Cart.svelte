@@ -3,8 +3,6 @@
   import IconButton from "@smui/icon-button";
   import { cart, totalPrice } from "./stores";
 
-  $: $cart, $totalPrice;
-
   function removeItem(itemId) {
     cart.update(items => items.filter(item => item.id !== itemId));
   }

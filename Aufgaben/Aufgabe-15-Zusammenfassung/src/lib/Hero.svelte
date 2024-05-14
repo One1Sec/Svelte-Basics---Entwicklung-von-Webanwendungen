@@ -1,13 +1,18 @@
 <script>
   import image from "../assets/image.png";
-  let heroText = "Welcome to Mario & Luigi's Pizza!";
-  let heroImage = image;
+
+  // Ziel: Definiere die Variablen heroText und heroImage und setze sie im HTML ein
+
+  // Azfgabe 1: Definiere die Variablen heroText und heroImage
+  let heroText;
+  let heroImage;
 </script>
 
 <section class="hero">
   <div class="hero-content">
-    <img src={heroImage} alt="Mario & Luigi's Pizza" class="hero-image" />
-    <h1>{heroText}</h1>
+    <!-- Aufgabe 1: -->
+    <!-- Verwende heroText als Inhalt des h1-Elements -->
+    <!-- Verwende heroImage als src-Attribut des img-Elements -->
   </div>
 </section>
 
@@ -26,7 +31,7 @@
     gap: 1rem;
   }
   .hero-image {
-    width: 100px; 
+    width: 100px;
     height: auto;
     border-radius: 25px;
   }

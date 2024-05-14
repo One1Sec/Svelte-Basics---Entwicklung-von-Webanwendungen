@@ -4,7 +4,7 @@
 
 <footer class="footer">
   <div class="footer-content">
-    <h3>Mario & Luigi's Pizza</h3>
+    <h3>MMario & Luigi's Pizza</h3>
     <p>Best pizza in the Mushroom Kingdom since 1985!</p>
     <ul class="footer-links">
       <li>Home</li>
