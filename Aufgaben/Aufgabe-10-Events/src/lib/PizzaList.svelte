@@ -1,6 +1,5 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  const dispatch = createEventDispatcher();
+  // Aufgabe 1: importiere createEventDispatcher aus svelte und erstelle eine dispatch-Variable
 
   let toppings = [
     { id: 1, name: "Goomba's Mushroom", emoji: "🍄" },
