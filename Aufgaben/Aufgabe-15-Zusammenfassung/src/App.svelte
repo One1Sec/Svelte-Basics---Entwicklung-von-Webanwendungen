@@ -28,6 +28,12 @@
     }}
   />
   <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist -->
+  <!-- 
+  Füge der OrderProcess-Komponente die Component/Custom Events hinzu, 
+  die in Aufgabe 6 dispatched wurden. Diese Events setzen beim Schließen 
+  des Dialogs isOrderProcessing auf false und spielen die entsprechenden 
+  Sounds ab (orderCompleted oder orderFailure). 
+-->
   <Contact />
   <Footer />
 </main>
