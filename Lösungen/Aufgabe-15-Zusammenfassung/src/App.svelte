@@ -8,7 +8,6 @@
   import orderSucess from "./assets/sucess.mp3";
   import orderFailed from "./assets/fail.mp3";
   import Contact from "./lib/Contact.svelte";
-  import { cart } from "./lib/stores";
 
   let isOrderProcessing = false;
 
@@ -28,7 +27,7 @@
       isOrderProcessing = true;
     }}
   />
-  {#if isOrderProcessing && $cart.length > 0}
+  {#if isOrderProcessing}
     <OrderProcess
       on:closeDialog={() => (isOrderProcessing = false)}
       on:orderSuccess={() => orderCompleted.play()}

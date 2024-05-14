@@ -8,7 +8,6 @@
   import orderSucess from "./assets/sucess.mp3";
   import orderFailed from "./assets/fail.mp3";
   import Contact from "./lib/Contact.svelte";
-  import { cart } from "./lib/stores";
 
   // Ziel: Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im onMount-Hook und zeige den OrderProcess an, wenn isOrderProcessing true ist
 
@@ -28,7 +27,7 @@
       isOrderProcessing = true;
     }}
   />
-  <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist und die $cart-Store nicht leer ist -->
+  <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist -->
   <!-- 
   Füge der OrderProcess-Komponente die Component/Custom Events hinzu, 
   die in Aufgabe 6 dispatched wurden. Diese Events setzen beim Schließen 
