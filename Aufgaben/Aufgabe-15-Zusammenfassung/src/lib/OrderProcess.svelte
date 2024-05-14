@@ -15,7 +15,7 @@
         // Aufgabe 6: dispatche ein Custom Event, wenn die Bestellung erfolgreich ist
         // Aufgabe 6: Setze den Warenkorb zurück, wenn die Bestellung erfolgreich ist
       } else {
-        reject(new Error("Order failed. Please try again."));
+        reject("Order failed. Please try again.");
         // Aufgabe 6: dispatche ein Custom Event, wenn die Bestellung fehlschlägt ist
       }
     }, 2000); // Simulate network delay
@@ -43,7 +43,8 @@
     <!-- 
         Hinweis: so muss das html strukturiert sein im {:then} und {:catch} : 
 
-        "<Actions>
+        <p>{message}</p>
+        <Actions>
           <Button on:click={...}>
             <Label>Close</Label>
           </Button>

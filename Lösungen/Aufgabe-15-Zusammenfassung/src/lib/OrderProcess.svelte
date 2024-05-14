@@ -14,7 +14,7 @@
         dispatch("orderSuccess");
         cart.set([]);
       } else {
-        reject(new Error("Order failed. Please try again."));
+        reject("Order failed. Please try again.");
         dispatch("orderFailed");
       }
     }, 2000); // Simulate network delay
@@ -44,7 +44,7 @@
         </Button>
       </Actions>
     {:catch error}
-      <p style="color: red">{error.message}</p>
+      <p style="color: red">{error}</p>
       <Actions>
         <Button on:click={handleClose}>
           <Label>Close</Label>
