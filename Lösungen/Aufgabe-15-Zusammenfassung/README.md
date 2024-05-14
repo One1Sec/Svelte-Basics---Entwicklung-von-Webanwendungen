@@ -396,7 +396,7 @@ Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook 
 
 - Finde die `App.svelte`
 - Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook.
-- Verwende einen `if`-Block, um `OrderProcess` anzuzeigen, wenn `isOrderProcessing` true ist.
+- Verwende einen `if`-Block, um `OrderProcess` anzuzeigen, wenn `isOrderProcessing` true ist und die `$cart`-Store nicht leer ist.
 - Füge der `OrderProcess`-Komponente Events hinzu, die beim Schließen des Dialogs `isOrderProcessing` auf `false` setzen und die entsprechenden Sounds abspielen (`orderCompleted` oder `orderFailure`).
 
 **Code:**
@@ -431,7 +431,7 @@ Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook 
       isOrderProcessing = true;
     }}
   />
-   <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist -->
+  <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist und die $cart-Store nicht leer ist -->
   <!--
   Füge der OrderProcess-Komponente die Component/Custom Events hinzu,
   die in Aufgabe 6 dispatched wurden. Diese Events setzen beim Schließen
