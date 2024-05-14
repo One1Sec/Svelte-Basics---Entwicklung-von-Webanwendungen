@@ -162,7 +162,7 @@ Implementiere die `addToCart` Funktion und zeige die Kategorien und Artikel dyna
 </main>
 ```
 
-### Aufgabe 4: Entfernen von Artikeln im Warenkorb
+### Aufgabe 4: Entfernen von Artikeln im Warenkorb und OrderButton disabling
 
 Implementiere die `removeItem` Funktion und zeige die Artikel im Warenkorb dynamisch an.
 
@@ -172,8 +172,10 @@ Implementiere die `removeItem` Funktion und zeige die Artikel im Warenkorb dynam
 - Implementiere die Funktion `removeItem`.
 - Zeige die Artikel im Warenkorb mit `{#each}` an.
 - Zeige den `totalPrice` mit zwei Nachkommastellen an.
+- disable den OrderButton, wenn der Warenkorb leer ist.
 
 **Code:**
+Cart.svelte
 
 ```svelte
 <script>
@@ -214,6 +216,20 @@ Implementiere die `removeItem` Funktion und zeige die Artikel im Warenkorb dynam
     </div>
   </div>
 </div>
+```
+
+OrderButton.svelte:
+
+```svelte
+<script>
+  import Button from "@smui/button";
+  import { cart } from "./stores";
+</script>
+
+<!--Aufagbe 4: Disable den Button wenn der Warenkorb leer ist-->
+<Button on:click variant="raised"
+  >Order Now</Button
+>
 ```
 
 ### Aufgabe 5: Bindings und Event-Handling
