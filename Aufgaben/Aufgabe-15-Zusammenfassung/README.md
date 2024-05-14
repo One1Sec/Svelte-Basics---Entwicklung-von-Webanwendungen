@@ -126,7 +126,7 @@ Implementiere die `addToCart` Funktion und zeige die Kategorien und Artikel dyna
 
   function addToCart(item) {
     // Aufgabe 3: Funktion addToCart vervollständigen
-    // Dein Code hier: Verwende .update, um den cart-Store zu aktualisieren
+    // Hinweis: Verwende .update, um den cart-Store zu aktualisieren
     cart((currentItems) => {
       const found = currentItems.find((p) => p.id === item.id);
       if (found) {
@@ -185,7 +185,7 @@ Implementiere die `removeItem` Funktion und zeige die Artikel im Warenkorb dynam
 
   function removeItem(itemId) {
     // Aufgabe 4: Implementiere die removeItem-Funktion
-    // Hinweis: cart.update(...)
+    // Hinweis: cart.update(...) & javascript array filter funktion
   }
 </script>
 
@@ -370,12 +370,21 @@ Dispatche ein Event, wenn der Dialog geschlossen wird und wenn die Bestellung er
 >
   <Title id="simple-title">Processing Order</Title>
   <Content id="simple-content">
-    <!-- Aufgabe 6: Verwende den Await-Block, um die Bestellung zu verarbeiten -->
+   <!-- Aufgabe 6: Verwende den Await-Block, um die Bestellung zu verarbeiten -->
     <!-- Zeige während der Wartezeit "Processing order..." an -->
     <!-- Im Erfolgsfall zeige die Erfolgsmeldung und einen <Button>, der die handleClose()-Funktion aufruft -->
     <!-- Im Fehlerfall zeige die Fehlermeldung in Rot und einen <Button>, der die handleClose()-Funktion aufruft -->
-    <p>Warten auf Bestellverarbeitung...</p>
-  </Content>
+
+    <!--
+        Hinweis: so muss das html strukturiert sein im {:then} und {:catch} :
+
+        <p>{message}</p>
+        <Actions>
+          <Button on:click={...}>
+            <Label>Close</Label>
+          </Button>
+        </Actions>""
+      -->
 </Dialog>
 ```
 
@@ -422,7 +431,13 @@ Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook 
       isOrderProcessing = true;
     }}
   />
-  <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist -->
+   <!-- Aufgabe 7: Verwende einen if-Block, um OrderProcess anzuzeigen, wenn isOrderProcessing true ist -->
+  <!--
+  Füge der OrderProcess-Komponente die Component/Custom Events hinzu,
+  die in Aufgabe 6 dispatched wurden. Diese Events setzen beim Schließen
+  des Dialogs isOrderProcessing auf false und spielen die entsprechenden
+  Sounds ab (orderCompleted oder orderFailure).
+  -->
   <Contact />
   <Footer />
 </main>
