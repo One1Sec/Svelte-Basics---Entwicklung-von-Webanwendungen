@@ -21,6 +21,7 @@ Definiere die Variablen `heroText` und `heroImage` und setze sie im HTML ein.
 
 **Anweisungen:**
 
+- Finde die `Hero.svelte` im lib Ordner
 - Definiere die Variablen `heroText` und `heroImage`.
 - Verwende `heroText` als Inhalt des `h1`-Elements.
 - Verwende `heroImage` als `src`-Attribut des `img`-Elements.
@@ -52,6 +53,7 @@ Erstelle zwei Svelte-Stores: einen writable Store namens `cart` und einen derive
 
 **Anweisungen:**
 
+- Finde die `stores.js`
 - Erstelle einen writable Store namens `cart`.
 - Erstelle einen derived Store namens `totalPrice`, der den Gesamtpreis berechnet.
 
@@ -77,6 +79,7 @@ Implementiere die `addToCart` Funktion und zeige die Kategorien und Artikel dyna
 
 **Anweisungen:**
 
+- Finde die `Menu.svelte`
 - Vervollständige die Funktion `addToCart`.
 - Zeige die Kategorien als Buttons dynamisch mit `{#each}` an.
 - Zeige die Artikel im Menü dynamisch mit `{#each}` an.
@@ -165,6 +168,7 @@ Implementiere die `removeItem` Funktion und zeige die Artikel im Warenkorb dynam
 
 **Anweisungen:**
 
+- Finde die `Cart.svelte`
 - Implementiere die Funktion `removeItem`.
 - Zeige die Artikel im Warenkorb mit `{#each}` an.
 - Zeige den `totalPrice` mit zwei Nachkommastellen an.
@@ -218,6 +222,7 @@ Verwende Bindings, um das Feedback-Formular mit den Variablen zu verknüpfen.
 
 **Anweisungen:**
 
+- Finde die `Contact.svelte`
 - Verwende `bind:` um die Variable `message` mit einem Textfeld zu verknüpfen.
 - Verwende `bind:` um die Werte der `ratings` zu verknüpfen.
 - Implementiere den Event-Handler für die Änderung der Bewertung.
@@ -313,6 +318,7 @@ Dispatche ein Event, wenn der Dialog geschlossen wird und wenn die Bestellung er
 
 **Anweisungen:**
 
+- Finde die `OrderProcess.svelte`
 - Erstelle einen Event Dispatcher.
 - Dispatche ein Custom Event, wenn die Bestellung erfolgreich ist.
 - Setze den Warenkorb zurück, wenn die Bestellung erfolgreich ist.
@@ -379,6 +385,7 @@ Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook 
 
 **Anweisungen:**
 
+- Finde die `App.svelte`
 - Initialisiere die Audio-Objekte für die Bestellstatus-Sounds im `onMount`-Hook.
 - Verwende einen `if`-Block, um `OrderProcess` anzuzeigen, wenn `isOrderProcessing` true ist.
 - Füge der `OrderProcess`-Komponente Events hinzu, die beim Schließen des Dialogs `isOrderProcessing` auf `false` setzen und die entsprechenden Sounds abspielen (`orderCompleted` oder `orderFailure`).

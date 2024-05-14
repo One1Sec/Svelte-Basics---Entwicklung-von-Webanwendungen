@@ -39,6 +39,15 @@
     <!-- Zeige während der Wartezeit "Processing order..." an -->
     <!-- Im Erfolgsfall zeige die Erfolgsmeldung und einen <Button>, der die handleClose()-Funktion aufruft -->
     <!-- Im Fehlerfall zeige die Fehlermeldung in Rot und einen <Button>, der die handleClose()-Funktion aufruft -->
-    <p>Warten auf Bestellverarbeitung...</p>
+
+    <!-- 
+        Hinweis: so muss das html strukturiert sein im {:then} und {:catch} : 
+
+        "<Actions>
+          <Button on:click={...}>
+            <Label>Close</Label>
+          </Button>
+        </Actions>""
+      -->
   </Content>
 </Dialog>

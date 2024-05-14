@@ -6,8 +6,6 @@
 
   const dispatch = createEventDispatcher();
 
-  let open = true;
-
   let orderPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       const success = Math.random() > 0.5;
@@ -23,38 +21,35 @@
   });
 
   function handleClose() {
-    open = false;
     dispatch("closeDialog");
     document.body.style.overflow = "auto"; // Enable scrolling after dialog is closed
   }
 </script>
 
-{#if open}
-  <Dialog
-    {open}
-    on:close={handleClose}
-    aria-labelledby="simple-title"
-    aria-describedby="simple-content"
-  >
-    <Title id="simple-title">Processing Order</Title>
-    <Content id="simple-content">
-      {#await orderPromise}
-        <p>Processing order...</p>
-      {:then message}
-        <p>{message}</p>
-        <Actions>
-          <Button on:click={handleClose}>
-            <Label>Close</Label>
-          </Button>
-        </Actions>
-      {:catch error}
-        <p style="color: red">{error.message}</p>
-        <Actions>
-          <Button on:click={handleClose}>
-            <Label>Close</Label>
-          </Button>
-        </Actions>
-      {/await}
-    </Content>
-  </Dialog>
-{/if}
+<Dialog
+  open
+  on:close={handleClose}
+  aria-labelledby="simple-title"
+  aria-describedby="simple-content"
+>
+  <Title id="simple-title">Processing Order</Title>
+  <Content id="simple-content">
+    {#await orderPromise}
+      <p>Processing order...</p>
+    {:then message}
+      <p>{message}</p>
+      <Actions>
+        <Button on:click={handleClose}>
+          <Label>Close</Label>
+        </Button>
+      </Actions>
+    {:catch error}
+      <p style="color: red">{error.message}</p>
+      <Actions>
+        <Button on:click={handleClose}>
+          <Label>Close</Label>
+        </Button>
+      </Actions>
+    {/await}
+  </Content>
+</Dialog>

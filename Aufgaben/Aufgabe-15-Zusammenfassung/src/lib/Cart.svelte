@@ -5,10 +5,11 @@
 
   // Ziel: Implementiere die removeItem Funktion und zeige die Artikel im Warenkorb dynamisch an
 
-
   // Aufgabe 4: Implementiere die removeItem-Funktion
-  // Hinweis: cart.update(...)
-  function removeItem(itemId) {}
+  // Hinweis: cart.update(...) & javascript array filter funktion
+  function removeItem(itemId) {
+    
+  }
 </script>
 
 <div class="container">
