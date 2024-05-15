@@ -8,7 +8,7 @@ In dieser Übung lernt ihr den Await-Block kennen sowie den event modifier once.
 
 1. **Bestellung abegeben und Ergebnis anzeigen**: Erstelle einen Button, der die Methode processOrder aufruft und das Ergebnis in der Variable Promise speichert. Unter dem Button soll nach dem Klicken dann "Processing ..." angezeigt werde solange die Bestellung verarbeitet werden und anschließend das Ergebnis der Verarbeitung. Bei der Verarbeitung kann auch ein Error geworfen werden, der auf der Webseite dann in rot angezeigt werden soll. Beachte, dass vor dem Button-Klick kein weiterer Text (wie z.B. "undefined") angezeigt werden soll. 
 
-2. **Extra Aufgabe - Verbesserungsmöglichkeit**: Beim Ausprobieren des Ergebnisses aus 1. wird schnell klar, dass der Event-modifier "once" nicht ideal für diese Aufgabe. Warum ist dies so? und wie könnte alternativer Code aussehen, der diese Problem nicht hat? (Die Methode processOrder soll nicht verändert werden)
+2. **Extra Aufgabe - Verbesserungsmöglichkeit**: Beim Ausprobieren des Ergebnisses aus 1. wird schnell klar, dass der Event-modifier "once" nicht ideal für diese Aufgabe ist. Warum ist dies so? und wie könnte alternativer Code aussehen, der diese Problem nicht hat? (Die Methode processOrder soll nicht verändert werden und es muss auch keine noch unbekannten Svelte-Methode oder Syntax verwendet werden)
 
 ## Hinweise zu den Aufgaben unter den Code Vorlagen
 

@@ -1,6 +1,5 @@
 export async function processOrder() {
-    // Fetch a random number between 0 and 100
-    // (with a delay, so that we can see it)
+    // returns a message of the status of the completed process or an error with a delay
     await new Promise(resolve => setTimeout(resolve, 2000));
     let randomNumber = Math.random()
     if(randomNumber < 0.8){
