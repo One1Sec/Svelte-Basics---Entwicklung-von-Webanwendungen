@@ -241,7 +241,6 @@ Verwende Bindings, um das Feedback-Formular mit den Variablen zu verknüpfen.
 - Finde die `Contact.svelte`
 - Verwende `bind:` um die Variable `message` mit einem Textfeld zu verknüpfen.
 - Verwende `bind:` um die Werte der `ratings` zu verknüpfen.
-- Implementiere den Event-Handler für die Änderung der Bewertung.
 
 **Code:**
 
@@ -300,11 +299,10 @@ Verwende Bindings, um das Feedback-Formular mit den Variablen zu verknüpfen.
           </span>
           <span>{rating.value}</span>
           <!-- Aufgabe 5: Verwende bind, um den Wert der Bewertung zu binden -->
-          <!-- Aufgabe 5: Füge den Event-Handler im on:change hinzu -->
           <Slider
             style="max-width: 200px; flex-grow: 1;"
             value={rating.value}
-            on:change={(event) => console.log("Hinweis: handleRatingChange")}
+            on:change={(event) => handleRatingChange(event, rating.id)}
             min={1.0}
             max={5.0}
           />
@@ -331,6 +329,8 @@ Verwende Bindings, um das Feedback-Formular mit den Variablen zu verknüpfen.
 ### Aufgabe 6: Event Dispatching und Await-Block
 
 Dispatche ein Event, wenn der Dialog geschlossen wird und wenn die Bestellung erfolgreich oder fehlgeschlagen ist. Verwende den Await-Block, um die Bestellung zu verarbeiten.
+
+**Wichtig**: Nicht wundern, die Anzeige des Dialogs geschieht erst nach Aufgabe 7.
 
 **Anweisungen:**
 
